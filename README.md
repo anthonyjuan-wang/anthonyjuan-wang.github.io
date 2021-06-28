@@ -1,1 +1,58 @@
-# anthonywang.github.io
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title> Anthony Wang.com </title>
+<style>
+
+.white-background {
+    background-color:white; 
+}
+
+h1{
+font-size:30px;
+text-align:center;
+padding:10px;
+}
+
+h2{
+font-size:20px;
+text-align:center;
+padding:10px;
+}
+
+</style>
+</head>
+<main >
+<h1> Anthony Wang </h1>
+<h2> anthonywang606@gmail.com <h2>
+<hr>
+<p> Hi! My name is Anthony Wang. I'm a fledgling coder, currently unaware and clueless of what kind of websites and projects I want to build in HTML.
+<img src = "https://imgur.com/a/GSIdwJ3" alt=" A picture of yours truly, masked on the city bus">
+<a href="#footer">Jump to bottom </a>
+
+
+
+
+
+<!-- 
+I want to center this ... Thinking of how I want to structure my website as of now 
+-->
+
+</main>
+
+<footer id=footer>Bottom of Page</footer>
+
+</footer>
+</footer>
+<body>
+
+
+</body>
+</html>
+
+
+
+
+
