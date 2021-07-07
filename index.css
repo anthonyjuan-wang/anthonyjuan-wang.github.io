@@ -1,29 +1,43 @@
 
-.black-background {
-    background-color:black;
 
+body{
+    font-family: Roboto;
+    background-color: 	#FF4500;
+    color:black;
+    
 }
 
+.text-align-left{
+    text-align:left;
+}
+
+div.a{
+text-align:center; 
+border:15px so
+
+
+}
 .profile-picture{
-    width:100px;
-    border-color:orange;
+
+    width: 150px;
+    border-color:black;
     border-width: 5px;
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 50%;
 
 }
-
-
 
 h1{
 font-size:30px;
 text-align:center;
-padding:10px;
+padding: 5px;
 }
 
 h2{
 font-size:20px;
 text-align:center;
-padding:10px;
+padding:5px;
 }
+
+
 
