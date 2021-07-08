@@ -12,12 +12,19 @@ body{
 }
 
 div.a{
-text-align:center; 
-border:15px so
-
-
+text-align:center;
+border-width:5px;
+border-color:white;
+border-style:solid;
+font-size:20px;
 }
-.profile-picture{
+
+div.b{
+text-align:left;
+font-size:15px;
+}
+
+.thin-black-border{
 
     width: 150px;
     border-color:black;
@@ -30,7 +37,7 @@ border:15px so
 h1{
 font-size:30px;
 text-align:center;
-padding: 5px;
+
 }
 
 h2{
