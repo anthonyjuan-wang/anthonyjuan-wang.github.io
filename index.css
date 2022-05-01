@@ -23,6 +23,7 @@ i.icon:hover{
     color:burlywood;
 }
 
+
 span.navbar-brand:hover{
     color:burlywood !important;
     animation: jello;
@@ -87,13 +88,16 @@ body {
     width: 100%;
 }
 
-
 .thin-black-border {
     width: 350px;
     border-color: black;
     border-width: 5px;
     border-style: solid;
     border-radius: 50%
+}
+
+img:hover{
+    transform:scale(1.05)
 }
 
 p.a {
