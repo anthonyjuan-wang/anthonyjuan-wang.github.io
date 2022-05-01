@@ -23,15 +23,6 @@ i.icon:hover{
     color:burlywood;
 }
 
-
-}
-
-
-
-.nav.navbar-nav.navbar-right li a {
-    color: white;
-}
-
 span.navbar-brand:hover{
     color:burlywood !important;
     animation: jello;
