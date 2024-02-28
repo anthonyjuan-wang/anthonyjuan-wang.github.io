@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/personal-website/static/css/main.f0149dce.css",
-    "main.js": "/personal-website/static/js/main.41ead88a.js",
+    "main.css": "/personal-website/static/css/main.25e4d425.css",
+    "main.js": "/personal-website/static/js/main.954c6b03.js",
     "static/js/592.74932e6f.chunk.js": "/personal-website/static/js/592.74932e6f.chunk.js",
     "static/media/aboutimage.jpeg": "/personal-website/static/media/aboutimage.466f4bc9d4086aeabb15.jpeg",
     "static/media/csclogo.png": "/personal-website/static/media/csclogo.467569253996b14e75dd.png",
@@ -11,12 +11,12 @@
     "static/media/envelope.svg": "/personal-website/static/media/envelope.5db19284c153fe8f0a7f5d64000b5cda.svg",
     "static/media/linkedin.svg": "/personal-website/static/media/linkedin.e9b8df20d092b20af087c400014ff4c8.svg",
     "static/media/halfcircle.svg": "/personal-website/static/media/halfcircle.dc95965dc3e0f4685ddd2f90a93384fc.svg",
-    "main.f0149dce.css.map": "/personal-website/static/css/main.f0149dce.css.map",
-    "main.41ead88a.js.map": "/personal-website/static/js/main.41ead88a.js.map",
+    "main.25e4d425.css.map": "/personal-website/static/css/main.25e4d425.css.map",
+    "main.954c6b03.js.map": "/personal-website/static/js/main.954c6b03.js.map",
     "592.74932e6f.chunk.js.map": "/personal-website/static/js/592.74932e6f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0149dce.css",
-    "static/js/main.41ead88a.js"
+    "static/css/main.25e4d425.css",
+    "static/js/main.954c6b03.js"
   ]
 }
