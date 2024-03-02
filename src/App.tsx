@@ -6,6 +6,7 @@ import "./App.css"; // Import app.css styles
 import NavBar from "./components/NavBar";
 import Landing from "./pages/Landing";
 import Footer from "./components/Footer";
+import Leadership from "./pages/Leadership";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Landing/>
       <About/>
       <Experience/>
+      <Leadership/>
       <Projects/>
       <Footer/>
     </>

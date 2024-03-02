@@ -1,14 +1,12 @@
 import { Section } from '../styles/Section.styles';
-import { ExpHeader,  DetailList, Detail, ExpDate, ExpLogo, TextContainer, LeadershipContainer } from '../pages/Experience';
+import { ExpHeader,  DetailList, Detail, ExpDate, ExpLogo, TextContainer, LeadershipContainer, WhiteAppContainer } from '../styles/Experience.styles'
 import CSA from '../assets/csalogo.png';
 import CSC from  '../assets/csclogo.png';
 import COK from '../assets/coklogo.png';
 
 
-
-
-const LeadershipExperience = () => {
-    const leadershipExperienceData = [
+const Leadership= () => {
+    const leadershipData = [
         {
             company: 'UW Computer Science Club',
             position: 'Lead Event Coordinator',
@@ -37,21 +35,23 @@ const LeadershipExperience = () => {
     ];
     
     return (
-        <Section heading="LEADERSHIP">
-            {leadershipExperienceData.map((experience) => (
-                <LeadershipContainer bgColor={experience.color}>
-                    <ExpLogo src={experience.logo} alt="logo"></ExpLogo>
-                    <TextContainer>
-                        <ExpHeader>{experience.company}, {experience.position} </ExpHeader>
-                        <ExpDate> {experience.date}</ExpDate>
-                        <DetailList>{experience.details.map((detail) => (
-                            <Detail>{detail}</Detail> 
-                        ))}</DetailList>
-                    </TextContainer>
-                </LeadershipContainer>
-            ))}
-        </Section>
+        <WhiteAppContainer>
+            <Section heading="LEADERSHIP">
+                {leadershipData.map((experience) => (
+                    <LeadershipContainer bgColor={experience.color}>
+                        <ExpLogo src={experience.logo} alt="logo"></ExpLogo>
+                        <TextContainer>
+                            <ExpHeader>{experience.company}, {experience.position} </ExpHeader>
+                            <ExpDate> {experience.date}</ExpDate>
+                            <DetailList>{experience.details.map((detail) => (
+                                <Detail>{detail}</Detail> 
+                            ))}</DetailList>
+                        </TextContainer>
+                    </LeadershipContainer>
+                ))}
+            </Section>
+        </WhiteAppContainer>
     );
 };
 
-export default LeadershipExperience;
+export default Leadership;

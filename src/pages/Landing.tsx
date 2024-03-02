@@ -58,7 +58,7 @@ const LandingHeader = styled.h1`
 const Landing = () => {   
     return (
         <LandingContainer>
-            <LandingHeader>Hey there, I'm Anthony. It's a pleasure to meet you!</LandingHeader>
+            <LandingHeader>Hey there, I'm Anthony. Nice to meet you!</LandingHeader>
             <Spin> 
                 <CenterLogo src = {yinyang} alt=""/>
             </Spin>

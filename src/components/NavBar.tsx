@@ -1,8 +1,14 @@
 import styled from "styled-components";
 import "../index.css";
 import { FaBars }  from "react-icons/fa";
+import { IconContext } from "react-icons";
 import { useState } from "react";
+interface NavMenuProps {
+    isNavOpen: Boolean;
+}
+
 export const NavBarContainer = styled.div`
+    position: sticky;
     display: flex;
     z-index: 1;
     align-items: center;
@@ -15,20 +21,20 @@ export const NavBarContainer = styled.div`
     @media screen and (max-width: 768px){
         flex-direction: column;
         align-items: flex-start;
-    } 
+    } 
 `;
 
-export const NavMenu = styled.ul`
+export const NavMenu = styled.ul<NavMenuProps>`
     display: flex;
     margin: 0;
     padding: 0;
     list-style-type: none;
     @media screen and (max-width: 768px){
-        width: 100%;
+        display: ${props => (props.isNavOpen ? "none" : "flex")};
+        width: 100%; 
         flex-direction: column;
         transition: all 0.5s ease-in-out;
-    } 
-
+    }
 `;
 
 const NavLogo = styled.div`
@@ -53,9 +59,8 @@ export const NavMenuItem = styled.li`
         text-decoration-thickness: 2px;
     }
     @media screen and (max-width: 768px){
-        
         text-align: center;
-    } 
+    }
 `;
 
 export const NavMenuLink = styled.a`
@@ -78,18 +83,34 @@ export const NavButton = styled.button`
     top: 0;
     right: 0;
     display: none;
-    transform(scale(3));
-    cursor: pointer;
     margin: 0 1rem;
+    cursor: pointer;
+    color: black;
+    border: black 2px solid;
+    outline: none;
+    &:hover{
+        color: black;
+    }
     @media screen and (max-width: 768px){
         display: flex;
     }
-    color: black;
-    background: transparent;
-    border: none;
-    outline: none;  
 `;
 
+export const FaClass = styled(FaBars)`
+    color: black;
+    &:visited{
+        color: black;
+    }
+    &:hover{  
+        color: black;
+    }
+    &:active {
+        color: black;
+    }
+    &:link {
+        color: black;
+    }
+`;
 
 const NavBar = () => {
 
@@ -102,16 +123,14 @@ const NavBar = () => {
         <NavBarContainer>
             <NavLogo>anthony</NavLogo>
             <NavButton onClick={handleNavClick}> 
-                <FaBars size = {25}/>
-            </NavButton>
-            {isNavOpen?
-                <NavMenu>
+                <FaClass />
+            </NavButton >
+                <NavMenu isNavOpen = {isNavOpen}>
                     <NavMenuItem><NavMenuLink href = "#about"> about </NavMenuLink></NavMenuItem>
                     <NavMenuItem><NavMenuLink href = "#experience"> experience </NavMenuLink></NavMenuItem>
                     <NavMenuItem><NavMenuLink href = "#projects"> projects </NavMenuLink></NavMenuItem>
                     <NavMenuItem><NavMenuLink href = "#contact"> contact </NavMenuLink></NavMenuItem>
                 </NavMenu>
-            : null}
 
         </NavBarContainer>
     );
