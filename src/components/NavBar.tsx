@@ -7,7 +7,7 @@ interface NavBarProps {
     isNavOpen: Boolean;
 }
 
-export const NavBarContainer = styled.div`
+const NavBarContainer = styled.div`
     position: sticky;
     display: flex;
     z-index: 1;
@@ -24,7 +24,7 @@ export const NavBarContainer = styled.div`
     }
 `;
 
-export const NavMenu = styled.ul<NavBarProps>`
+const NavMenu = styled.ul<NavBarProps>`
     display: flex;
     margin: 0;
     padding: 0;
@@ -45,7 +45,7 @@ const NavLogo = styled.div<NavBarProps>`
 `;
 
 
-export const NavMenuItem = styled.li`
+const NavMenuItem = styled.li`
     margin: 1rem;
     list-style: none;
     font-size: 1.25rem;
@@ -62,7 +62,7 @@ export const NavMenuItem = styled.li`
     }
 `;
 
-export const NavMenuLink = styled.a`
+const NavMenuLink = styled.a`
     text-decoration: none;
     &:active{
         color: var(--cherry-blossom-pink);
@@ -75,7 +75,7 @@ export const NavMenuLink = styled.a`
     }
 `;
 
-export const NavOpenButton = styled.button<NavBarProps>` 
+const NavOpenButton = styled.button<NavBarProps>` 
     position: absolute;
     top: 0.25rem;
     right: 0.5rem;

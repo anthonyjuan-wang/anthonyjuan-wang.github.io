@@ -11,6 +11,7 @@ export const WhiteAppContainer = styled(AppContainer)`
     margin: 0 auto;
     background: var(--mint-cream);
 `;
+
 export const BlueAppContainer = styled(AppContainer)`
     margin: 0 auto;
     background: var(--sky-blue);
