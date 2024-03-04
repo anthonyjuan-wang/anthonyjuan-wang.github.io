@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { ReactNode} from 'react';
+import {ReactNode} from 'react';
 interface SectionProps {
   heading?: string;
   children?: ReactNode;

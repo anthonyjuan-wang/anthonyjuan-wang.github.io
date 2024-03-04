@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import "../index.css";
-import { FaBars }  from "react-icons/fa";
-import { IconContext } from "react-icons";
 import { useState } from "react";
-interface NavMenuProps {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+interface NavBarProps {
     isNavOpen: Boolean;
 }
 
@@ -21,25 +21,24 @@ export const NavBarContainer = styled.div`
     @media screen and (max-width: 768px){
         flex-direction: column;
         align-items: flex-start;
-    } 
+    }
 `;
 
-export const NavMenu = styled.ul<NavMenuProps>`
+export const NavMenu = styled.ul<NavBarProps>`
     display: flex;
     margin: 0;
     padding: 0;
     list-style-type: none;
     @media screen and (max-width: 768px){
-        display: ${props => (props.isNavOpen ? "none" : "flex")};
         width: 100%; 
+        text-align: center;
         flex-direction: column;
-        transition: all 0.5s ease-in-out;
+        display: ${props => (props.isNavOpen ? "flex" : "none")};
     }
 `;
 
-const NavLogo = styled.div`
-    padding: 0;
-    margin-left: 1rem;
+const NavLogo = styled.div<NavBarProps>`
+    margin: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 0.25rem;
@@ -47,7 +46,7 @@ const NavLogo = styled.div`
 
 
 export const NavMenuItem = styled.li`
-    padding: 0;
+    margin: 1rem;
     list-style: none;
     font-size: 1.25rem;
     font-weight: bold;
@@ -64,8 +63,6 @@ export const NavMenuItem = styled.li`
 `;
 
 export const NavMenuLink = styled.a`
-    padding: 1rem;
-    display: block;
     text-decoration: none;
     &:active{
         color: var(--cherry-blossom-pink);
@@ -78,60 +75,44 @@ export const NavMenuLink = styled.a`
     }
 `;
 
-export const NavButton = styled.button`
+export const NavOpenButton = styled.button<NavBarProps>` 
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0.25rem;
+    right: 0.5rem;
     display: none;
-    margin: 0 1rem;
+    margin: 1rem;
     cursor: pointer;
     color: black;
-    border: black 2px solid;
     outline: none;
+    background: transparent;
+    border: none;
     &:hover{
         color: black;
     }
     @media screen and (max-width: 768px){
-        display: flex;
-    }
-`;
-
-export const FaClass = styled(FaBars)`
-    color: black;
-    &:visited{
-        color: black;
-    }
-    &:hover{  
-        color: black;
-    }
-    &:active {
-        color: black;
-    }
-    &:link {
-        color: black;
+        display: block;
     }
 `;
 
 const NavBar = () => {
 
-    const [isNavOpen, setNavOpen] = useState(true);
-    const handleNavClick = () => { 
+    const [isNavOpen, setNavOpen] = useState(false);
+    const handleNavClick = () => {
         setNavOpen(!isNavOpen);
     }
 
     return (
         <NavBarContainer>
-            <NavLogo>anthony</NavLogo>
-            <NavButton onClick={handleNavClick}> 
-                <FaClass />
-            </NavButton >
-                <NavMenu isNavOpen = {isNavOpen}>
-                    <NavMenuItem><NavMenuLink href = "#about"> about </NavMenuLink></NavMenuItem>
-                    <NavMenuItem><NavMenuLink href = "#experience"> experience </NavMenuLink></NavMenuItem>
-                    <NavMenuItem><NavMenuLink href = "#projects"> projects </NavMenuLink></NavMenuItem>
-                    <NavMenuItem><NavMenuLink href = "#contact"> contact </NavMenuLink></NavMenuItem>
-                </NavMenu>
-
+            <NavLogo isNavOpen={isNavOpen}>anthony</NavLogo>
+            <NavMenu isNavOpen={isNavOpen}>
+                <NavMenuItem><NavMenuLink href="#about"> about </NavMenuLink></NavMenuItem>
+                <NavMenuItem><NavMenuLink href="#experience"> experience </NavMenuLink></NavMenuItem>
+                <NavMenuItem><NavMenuLink href="#projects"> projects </NavMenuLink></NavMenuItem>
+                <NavMenuItem><NavMenuLink href="#contact"> contact </NavMenuLink></NavMenuItem>
+            </NavMenu>
+            <NavOpenButton isNavOpen={isNavOpen} onClick={handleNavClick}>
+                <FontAwesomeIcon icon={faBars} size="2x" />
+            </NavOpenButton>
         </NavBarContainer>
     );
 };
