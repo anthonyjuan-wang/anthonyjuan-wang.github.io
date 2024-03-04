@@ -12,7 +12,6 @@ const FooterContainer = styled.div`
     position: absolute;
     width: 100%;
     margin: 0 auto;
-    padding: 0.5rem;
     background: var(--cherry-blossom-pink);
 `;
 
