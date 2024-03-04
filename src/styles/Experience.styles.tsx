@@ -11,7 +11,6 @@ export const WhiteAppContainer = styled(AppContainer)`
     margin: 0 auto;
     background: var(--mint-cream);
 `;
-
 export const BlueAppContainer = styled(AppContainer)`
     margin: 0 auto;
     background: var(--sky-blue);
@@ -19,13 +18,12 @@ export const BlueAppContainer = styled(AppContainer)`
 
 export const ExpContainer = styled.div<{ bgColor: string}>`
     padding-left: 1rem;
-    padding-bottom: 1rem;
+    padding-right: 1rem;
     margin-bottom: 2rem;
-    position: relative;
     background: var(--beige);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 1.5rem;
 `;
 
@@ -36,7 +34,6 @@ export const LeadershipContainer = styled(ExpContainer)`
     align-items: center;
     justify-content: flex-start;
     gap: 2rem;
-    position: relative;
 `;
 
 export const ExpLogo = styled.img`
@@ -58,7 +55,7 @@ export const ExpHeader = styled.h1`
 `;
 
 export const DetailList = styled.ul`
-    margin: 0;
+    margin-bottom: 2rem;
     font-weight: normal;
     font-size: 1.25rem;
     line-height: 1.5;
