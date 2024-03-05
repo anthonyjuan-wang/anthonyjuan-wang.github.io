@@ -48,7 +48,7 @@ const ImgWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 35rem; 
+    height: 35rem;
 `;
 
 const About = () => {

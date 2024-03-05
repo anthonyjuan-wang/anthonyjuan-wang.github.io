@@ -5,7 +5,7 @@ const LandingContainer = styled.div`
     display: flex;
     height: 100dvh;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 `;
 
@@ -52,7 +52,6 @@ const LandingHeader = styled.h1`
     max-width: 960px;
     @media (max-width: 800px) {
         font-size: 40px;
-        margin: 40px 0;
     }
 `;
 const Landing = () => {   
