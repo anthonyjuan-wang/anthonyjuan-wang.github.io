@@ -38,8 +38,6 @@ const NavMobileMenu = styled.div<NavBarProps>`
     }
     height: ${props => (props.isNavOpen ? "40dvh" : 0)};
     transition: all 0.5s ease-in-out;
-
-
     li {
         transition: all 0.4s ease-in-out;
         opacity: ${props => (props.isNavOpen ? "1" : "0")};
@@ -57,7 +55,7 @@ const NavMobileMenu = styled.div<NavBarProps>`
     }
 `;
 
-const NavMenu = styled.div<NavBarProps>`
+const NavMenu = styled.div`
     display: flex;
     margin: 0;
     padding: 0;
@@ -81,7 +79,7 @@ const NavMenu = styled.div<NavBarProps>`
     }
 `;
 
-const NavLogo = styled.div<NavBarProps>`
+const NavLogo = styled.div`
     transition: all 0.5s ease-out;
     margin: 1rem;
     font-size: 1.5rem;
@@ -134,19 +132,19 @@ const NavBar = () => {
 
     return (
         <NavBarContainer>
-            <NavLogo isNavOpen={isNavOpen}>anthony</NavLogo>
-            <NavMenu isNavOpen={isNavOpen}>
+            <NavLogo>anthony</NavLogo>
+            <NavMenu>
                 <NavMenuItem><NavMenuLink href="#about"> about </NavMenuLink></NavMenuItem>
                 <NavMenuItem><NavMenuLink href="#experience"> experience </NavMenuLink></NavMenuItem>
                 <NavMenuItem><NavMenuLink href="#projects"> projects </NavMenuLink></NavMenuItem>
                 <NavMenuItem><NavMenuLink href="#contact"> contact </NavMenuLink></NavMenuItem>
             </NavMenu>
-            <NavMobileMenu isNavOpen={isNavOpen}>
-                <NavMenuItem><NavMenuLink href="#about"> about </NavMenuLink></NavMenuItem>
-                <NavMenuItem><NavMenuLink href="#experience"> experience </NavMenuLink></NavMenuItem>
-                <NavMenuItem><NavMenuLink href="#projects"> projects </NavMenuLink></NavMenuItem>
-                <NavMenuItem><NavMenuLink href="#contact"> contact </NavMenuLink></NavMenuItem>
-            </NavMobileMenu>
+                <NavMobileMenu isNavOpen={isNavOpen}>
+                    <NavMenuItem><NavMenuLink href="#about"> about </NavMenuLink></NavMenuItem>
+                    <NavMenuItem><NavMenuLink href="#experience"> experience </NavMenuLink></NavMenuItem>
+                    <NavMenuItem><NavMenuLink href="#projects"> projects </NavMenuLink></NavMenuItem>
+                    <NavMenuItem><NavMenuLink href="#contact"> contact </NavMenuLink></NavMenuItem>
+                </NavMobileMenu>
             <NavButton isNavOpen={isNavOpen} onClick={handleNavClick}>
                 {isNavOpen? <FontAwesomeIcon icon={faX} size="2x" />
                     : <FontAwesomeIcon icon={faBars} size="2x" /> }
