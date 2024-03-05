@@ -1,4 +1,4 @@
-import styled, {css, keyframes} from "styled-components";
+import styled  from "styled-components";
 import "../index.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -36,7 +36,7 @@ const NavMobileMenu = styled.div<NavBarProps>`
     @media screen and (min-width: 768px){
         display: none;
     }
-    height: ${props => (props.isNavOpen ? "40dvh" : 0)};
+    height: ${props => (props.isNavOpen ? "35dvh" : 0)};
     transition: all 0.5s ease-in-out;
     li {
         transition: all 0.4s ease-in-out;
