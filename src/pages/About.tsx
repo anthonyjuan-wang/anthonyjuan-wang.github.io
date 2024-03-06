@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { AppContainer, Header } from '../styles/Global.styles';
 import coverPhoto from '../assets/aboutimage.jpeg';
-
+import { device } from "../styles/breakpoints";
 
 const AboutItem = styled.p`
   line-height: 1.5;
@@ -20,9 +20,9 @@ const AboutSection = styled.div`
     align-items: center;
     justify-content: center;
     gap: 20px;
-    @media screen and (max-width: 600px) {
+    @media screen and ${device.mobileM} {
         flex-direction: column;
-    }   
+    }
 `;
 
 const AboutImage = styled.img`
@@ -38,7 +38,7 @@ const AboutText = styled.div`
     flex-direction: column;
     width: 50%;
     max-width: 100%;
-    @media  screen and (max-width: 600px) {
+    @media  screen and ${device.mobileM} {
         width: 90%;
     }
 `;

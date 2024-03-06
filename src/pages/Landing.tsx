@@ -54,14 +54,17 @@ const LandingHeader = styled.h1`
         font-size: 40px;
     }
 `;
+
 const Landing = () => {   
     return (
+        <div id = "blossom-container">
         <LandingContainer>
             <LandingHeader>Hey there, I'm Anthony. Nice to meet you!</LandingHeader>
             <Spin> 
                 <CenterLogo src = {yinyang} alt=""/>
             </Spin>
         </LandingContainer>
+        </div>
     )
 };
 

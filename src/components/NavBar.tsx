@@ -3,6 +3,7 @@ import "../index.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { device, size } from "../styles/breakpoints";
 interface NavBarProps {
     isNavOpen: Boolean;
 }
@@ -18,7 +19,8 @@ const NavBarContainer = styled.div`
     left: 0;
     width: 100%;
     background: var(--cherry-blossom-pink);
-    @media screen and (max-width: 768px){
+
+    @media screen and ${device.mobileM} {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -33,7 +35,8 @@ const NavMobileMenu = styled.div<NavBarProps>`
     width: 100%; 
     text-align: center;
     flex-direction: column;
-    @media screen and (min-width: 768px){
+
+    @media screen and (min-width: ${size.sm}){
         display: none;
     }
     height: ${props => (props.isNavOpen ? "35dvh" : 0)};
@@ -60,7 +63,7 @@ const NavMenu = styled.div`
     margin: 0;
     padding: 0;
     list-style-type: none;
-    @media screen and (max-width: 768px){
+    @media screen and ${device.mobileM}{
         display: none;
     }
 
@@ -118,7 +121,7 @@ const NavButton = styled.button<NavBarProps>`
     &:hover{
         color: black;
     }
-    @media screen and (max-width: 768px){
+    @media screen and ${device.mobileM}{
         display: block;
     }
 `;

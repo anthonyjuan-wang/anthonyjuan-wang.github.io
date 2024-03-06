@@ -39,7 +39,7 @@ const Footer = () => {
             icon: LinkedIn,
         },
         {
-            link: "mailto:aj3wang@uwaterloo.ca",
+            link: "mailto:anthony.wang1@uwaterloo.ca",
             icon: Mail,
         },
     ];

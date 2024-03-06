@@ -8,8 +8,10 @@ const Experience = () => {
             position: 'Software Developer',
             date: 'Winter 2024',
             tech: 'C#, .NET, Python',
-            details: ['Automated manual data extraction process from MCD files, decreasing average processing time by 300% with Python', 
-                "Developed program simulating Suspension and Imaging mode on StandardBioTools medical instruments, using Signal Generators, .NET & C#, enhancing software testing workflow & productivity by over 200%"],
+            details: [
+                        "Automated manual data extraction process from MCD files, decreasing average processing time by 300% with Python", 
+                        "Developed program simulating Suspension and Imaging mode on StandardBioTools medical instruments, using Signal Generators, .NET & C#, enhancing software testing workflow & productivity by over 200%"
+                    ],
             link: 'https://www.standardbio.com/',
             color: '--tea-green',
         },
@@ -19,13 +21,13 @@ const Experience = () => {
             date: 'Winter 2023',
             tech: 'React, JavaScript, HTML, CSS',
             details: [
-                        "Upgraded front-end of website from Node 7 to Node 16" + 
-                        "updating over 10+ pages and 50+ React and MaterialUI" + 
-                        "components, improving user accessibility to critical temperature data",
+                        "Upgraded front-end of website from Node 7 to Node 16 " + 
+                        "updating over 10+ pages and 50+ React and MaterialUI " + 
+                        "components, improving user accessibility to critical temperature data ",
                         "Developed 5+ user customization customization features using React.js & MaterialUI, " + 
                         "improving user satisfaction by over 10% according to consumer survey",
-                        "Optimized data pipeline to the server by minimizing latency for expedited data transmission," +
-                        "allowing for more efficientdata parsing & contributing to a 13% overall improvement in system responsiveness"
+                        "Optimized data pipeline to the server by minimizing latency for expedited data transmission, " +
+                        "allowing for more efficient data parsing & contributing to a 13% overall improvement in system responsiveness"
                     ],
             link:  'https://www.bluerover.ai/',
             color: '--mint-cream',
@@ -36,13 +38,13 @@ const Experience = () => {
             date: 'Summer 2022',
             tech: 'React, JavaScript, HTML, CSS',
             details: [
-                        "Refactored the existing UI to UI 2.0 by recreating over" + 
+                        "Refactored the existing UI to UI 2.0 by recreating over " + 
                         "12+ PHP components in React, modernizing the outdated user interface",
-                        "Ensured production stability by writing 20+ unit tests for 10+ components" +
+                        "Ensured production stability by writing 20+ unit tests for 10+ components " +
                         "with Jest & React Testing Library, enabling the safe production launch of UI 2.0",
-                        "Enhanced system performance by optimizing the transmission efficiency of user data" + 
+                        "Enhanced system performance by optimizing the transmission efficiency of user data " + 
                         "to the server, resulting in accelerated data processing and improved overall application responsivenes"
-                     ],
+                    ],
             link:  'https://firsthx.com/',
             color: '--sky-blue',
         },
