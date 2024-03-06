@@ -1,5 +1,5 @@
 import { Section } from '../styles/Section.styles';
-import { ExpHeader,  DetailList, Detail, ExpDate, ExpLogo, TextContainer, LeadershipContainer, WhiteAppContainer } from '../styles/Experience.styles'
+import { ExpHeader,  DetailList, Detail, ExpDate, ExpLogo, TextContainer, LeadershipContainer, BlueAppContainer } from '../styles/Experience.styles'
 import CSA from '../assets/csalogo.png';
 import CSC from  '../assets/csclogo.png';
 import COK from '../assets/coklogo.png';
@@ -35,7 +35,7 @@ const Leadership= () => {
     ];
     
     return (
-        <WhiteAppContainer>
+        <BlueAppContainer>
             <Section heading="LEADERSHIP">
                 {leadershipData.map((experience) => (
                     <LeadershipContainer bgColor={experience.color}>
@@ -50,7 +50,7 @@ const Leadership= () => {
                     </LeadershipContainer>
                 ))}
             </Section>
-        </WhiteAppContainer>
+        </BlueAppContainer>
     );
 };
 

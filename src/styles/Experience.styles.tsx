@@ -9,7 +9,7 @@ export const TextContainer = styled.div`
 
 export const WhiteAppContainer = styled(AppContainer)`
     margin: 0 auto;
-    background: var(--mint-cream);
+    background: var(--beige);
 `;
 export const BlueAppContainer = styled(AppContainer)`
     margin: 0 auto;
@@ -20,7 +20,7 @@ export const ExpContainer = styled.div<{ bgColor: string}>`
     padding-left: 1rem;
     padding-right: 1rem;
     margin-bottom: 2rem;
-    background: var(--beige);
+    background: var(--sky-blue);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -31,6 +31,7 @@ export const LeadershipContainer = styled(ExpContainer)`
     padding: 0;
     display:flex;
     flex-direction: row;
+    background: var(--beige);
     align-items: center;
     justify-content: flex-start;
     gap: 2rem;

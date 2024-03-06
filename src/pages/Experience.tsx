@@ -1,5 +1,5 @@
 import { Section } from '../styles/Section.styles';
-import { BlueAppContainer, ExpContainer, ExpHeader, Link, ExpDate, DetailList, Detail } from '../styles/Experience.styles';
+import { WhiteAppContainer, ExpContainer, ExpHeader, Link, ExpDate, DetailList, Detail } from '../styles/Experience.styles';
 
 const Experience = () => {
     const experienceData = [
@@ -52,7 +52,7 @@ const Experience = () => {
     ];
     
     return (
-        <BlueAppContainer id="experience">
+        <WhiteAppContainer id="experience">
             <Section heading="EXPERIENCE">
                 {experienceData.map((experience) => (
                     <ExpContainer bgColor={experience.color}>
@@ -66,7 +66,7 @@ const Experience = () => {
                     </ExpContainer>
                 ))}
             </Section>
-        </BlueAppContainer>
+        </WhiteAppContainer>
     );
 };
 
