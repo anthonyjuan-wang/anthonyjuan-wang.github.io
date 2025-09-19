@@ -87,16 +87,24 @@ const NavMenu = styled.div`
     }
 `;
 
-const NavLogo = styled(motion.div)`
+const NavLogo = styled(motion.a)`
     transition: all 0.5s ease-out;
     margin: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
-    letter-spacing: 0.25rem;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    letter-spacing: normal;
     background: linear-gradient(135deg, var(--matcha-dark) 0%, var(--matcha-accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 `;
 
 
@@ -154,12 +162,22 @@ const NavBar = () => {
             transition={{ duration: 0.5, ease: "easeOut" }}
         >
             <NavLogo
+                href="#landing"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
             >
-                anthony
+                anthony wang
             </NavLogo>
             <NavMenu>
+                <NavMenuItem>
+                    <NavMenuLink
+                        href="#landing"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        home
+                    </NavMenuLink>
+                </NavMenuItem>
                 <NavMenuItem>
                     <NavMenuLink
                         href="#about"
@@ -176,6 +194,15 @@ const NavBar = () => {
                         whileTap={{ scale: 0.95 }}
                     >
                         experience
+                    </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
+                    <NavMenuLink
+                        href="#leadership"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        leadership
                     </NavMenuLink>
                 </NavMenuItem>
                 <NavMenuItem>
@@ -199,10 +226,16 @@ const NavBar = () => {
             </NavMenu>
             <NavMobileMenu isNavOpen={isNavOpen}>
                 <NavMenuItem>
+                    <NavMenuLink href="#landing"> home </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
                     <NavMenuLink href="#about"> about </NavMenuLink>
                 </NavMenuItem>
                 <NavMenuItem>
                     <NavMenuLink href="#experience"> experience </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
+                    <NavMenuLink href="#leadership"> leadership </NavMenuLink>
                 </NavMenuItem>
                 <NavMenuItem>
                     <NavMenuLink href="#projects"> projects </NavMenuLink>
