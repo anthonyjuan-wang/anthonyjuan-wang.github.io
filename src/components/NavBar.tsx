@@ -7,7 +7,7 @@ import { device, size } from "../styles/breakpoints";
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 interface NavBarProps {
-    isNavOpen: Boolean;
+    isNavOpen: boolean;
 }
 
 const NavBarContainer = styled(motion.div)`

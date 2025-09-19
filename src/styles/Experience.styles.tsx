@@ -1,29 +1,25 @@
 import styled from "styled-components";
 import { AppContainer } from "./Global.styles";
 
-export const TextContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 65%;
-`;  
-
-export const WhiteAppContainer = styled(AppContainer)`
-    margin: 0 auto;
-    background: linear-gradient(180deg,
-        rgba(184, 216, 184, 0.3) 0%,
-        rgba(200, 224, 200, 0.25) 100%);
+// Base container with glassmorphism effect
+const BaseGlassContainer = styled(AppContainer)`
     backdrop-filter: blur(5px);
     padding: 80px 20px;
     position: relative;
 `;
-export const BlueAppContainer = styled(AppContainer)`
+
+export const WhiteAppContainer = styled(BaseGlassContainer)`
+    margin: 0 auto;
+    background: linear-gradient(180deg,
+        rgba(184, 216, 184, 0.3) 0%,
+        rgba(200, 224, 200, 0.25) 100%);
+`;
+
+export const BlueAppContainer = styled(BaseGlassContainer)`
     margin: -2px auto 0 auto;
     background: linear-gradient(180deg,
         rgba(200, 224, 200, 0.25) 0%,
         rgba(184, 216, 184, 0.3) 100%);
-    backdrop-filter: blur(5px);
-    padding: 80px 20px;
-    position: relative;
 `;
 
 // Timeline container wrapper

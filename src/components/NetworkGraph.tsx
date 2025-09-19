@@ -41,13 +41,11 @@ const GraphContainer = styled.div<{ isVisible: boolean }>`
 `;
 
 const NetworkGraph: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
-  const graphRef = useRef<any>();
-  const [zoomLevel, setZoomLevel] = useState(1);
+  const graphRef = useRef<any>(); // ForceGraph2D instance - library doesn't export types
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [draggedNode, setDraggedNode] = useState<string | null>(null);
   const animationFrameRef = useRef<number>();
   const nodeAnimationsRef = useRef<Map<string, { currentSize: number; targetSize: number; currentLabelY: number; targetLabelY: number }>>(new Map());
-  const [hasInitialized, setHasInitialized] = useState(false);
   const [graphData] = useState<GraphData>({
     nodes: [
       { id: 'home', label: 'drag me around!' },  // Central node
@@ -141,8 +139,8 @@ const NetworkGraph: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
     node.fy = undefined;
   }, []);
 
-  const handleZoomChange = useCallback(({ k }: { k: number }) => {
-    setZoomLevel(k);
+  const handleZoomChange = useCallback(() => {
+    // Zoom change handler if needed in future
   }, []);
 
   const drawNode = useCallback((node: NodeData, ctx: CanvasRenderingContext2D, globalScale: number) => {
@@ -262,18 +260,20 @@ const NetworkGraph: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
         graphData={graphData as any}
         nodeLabel=""
         nodeCanvasObject={drawNode}
-        nodePointerAreaPaint={(node: any, color: string, ctx: CanvasRenderingContext2D) => {
+        nodePointerAreaPaint={(node: NodeData, color: string, ctx: CanvasRenderingContext2D) => {
           // Increase hover area for better detection
+          const x = node.x || 0;
+          const y = node.y || 0;
           ctx.fillStyle = color;
           ctx.beginPath();
-          ctx.arc(node.x, node.y, 15, 0, 2 * Math.PI);
+          ctx.arc(x, y, 15, 0, 2 * Math.PI);
           ctx.fill();
         }}
         linkCanvasObject={drawLink}
         onNodeClick={handleNodeClick}
         onNodeDrag={handleNodeDrag}
         onNodeDragEnd={handleNodeDragEnd}
-        onNodeHover={(node: any) => setHoveredNode(node ? node.id : null)}
+        onNodeHover={(node: NodeData | null) => setHoveredNode(node ? node.id : null)}
         onZoomEnd={handleZoomChange}
         enableNodeDrag={true}
         enablePanInteraction={true}

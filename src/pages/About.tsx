@@ -102,7 +102,7 @@ const About = () => {
     const aboutContent = [
         "Hi! I'm Anthony, a student in my final year at the University of Waterloo, majoring in Stat with a minor in CS.",
         "I'm currently completing my final internship at Shopify, working on improving A-B testing methods and platforms.",
-        "In my life outside code, I love to EAT, play video games, watch anime, and am currently (learning) to cook!",,
+        "In my life outside code, I love to EAT, play video games, watch anime, and am currently (learning) to cook!"
     ];
 
     return (

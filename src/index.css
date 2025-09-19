@@ -1,15 +1,6 @@
 
 :root{
-  --night: #111111ff;
-  --mint-cream: #f5fffaff;
-  --cherry-blossom-pink: #f7b2bdff;
-  --vermilion: #dd3f30ff;
-  --butterscotch: #F0A94D;
-  --tea-green: #C7EFCF;
-  --sky-blue: #aeebff;
-  --beige: 	#fff0db;
-
-  /* New Matcha Color Palette */
+  /* Matcha Color Palette */
   --matcha-light: #D4E8D4;
   --matcha-primary: #B8D8B8;
   --matcha-medium: #A8D5A8;
@@ -18,6 +9,9 @@
   --white-soft: #FAFFFE;
   --shadow-soft: rgba(168, 213, 168, 0.2);
   --shadow-medium: rgba(143, 198, 143, 0.3);
+
+  /* Legacy - only used for svg hover */
+  --vermilion: #dd3f30ff;
 }
 
 body {

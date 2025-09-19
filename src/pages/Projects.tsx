@@ -23,13 +23,12 @@ const ComingSoonText = styled(motion.div)`
     text-align: center;
     padding: 40px;
     background: var(--white-soft);
-    border-radius: 2rem;
     box-shadow: 0 10px 30px var(--shadow-soft);
     max-width: 600px;
     margin: 0 auto;
 `;
 
-const About = () => {
+const Projects = () => {
     const sectionRef = useRef(null);
     const controls = useScrollAnimation(sectionRef, 0.3);
 
@@ -48,4 +47,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default Projects;

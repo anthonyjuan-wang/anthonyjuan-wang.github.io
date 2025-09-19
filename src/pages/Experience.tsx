@@ -1,5 +1,5 @@
 import { Section } from '../styles/Section.styles';
-import { WhiteAppContainer, ExpContainer, ExpHeader, Link, ExpDate, DetailList, Detail, TimelineWrapper, TimelineItem, TimelineLogo, RoleContainer, RoleHeader, RoleDate, CompanyHeader } from '../styles/Experience.styles';
+import { WhiteAppContainer, ExpContainer, Link, DetailList, Detail, TimelineWrapper, TimelineItem, TimelineLogo, RoleContainer, RoleHeader, RoleDate, CompanyHeader } from '../styles/Experience.styles';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { fadeInUp } from '../hooks/useScrollAnimation';
