@@ -58,7 +58,7 @@ const Experience = () => {
 
     return (
         <WhiteAppContainer id="experience" ref={containerRef}>
-            <Section heading="EXPERIENCE">
+            <Section heading="experience">
                 <div>
                     {experienceData.map((experience, index) => (
                         <motion.div

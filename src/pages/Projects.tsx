@@ -30,7 +30,7 @@ const About = () => {
 
     return (
         <ProjectsContainer id="projects" ref={sectionRef}>
-            <Section heading='PROJECTS'>
+            <Section heading='projects'>
                 <ComingSoonText
                     initial="hidden"
                     animate={controls}

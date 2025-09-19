@@ -2,6 +2,7 @@ import styled from "styled-components";
 import GitHub from "../assets/github.svg";
 import Mail from "../assets/envelope.svg";
 import LinkedIn from "../assets/linkedin.svg";
+import Instagram from "../assets/instagram-svgrepo-com.svg";
 import { Header } from "../styles/Global.styles";
 import { motion } from 'framer-motion';
 
@@ -56,6 +57,10 @@ const Footer = () => {
             icon: LinkedIn,
         },
         {
+            link: "https://www.instagram.com/anthony.wang_/",
+            icon: Instagram,
+        },
+        {
             link: "mailto:anthony.wang1@uwaterloo.ca",
             icon: Mail,
         },
@@ -74,7 +79,7 @@ const Footer = () => {
                 viewport={{ once: false, amount: 0.5 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
             >
-                CONTACT
+                contact
             </FooterHeader>
             <FooterList
                 initial="hidden"

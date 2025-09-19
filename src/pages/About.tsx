@@ -100,7 +100,7 @@ const About = () => {
                     ease: "easeOut"
                 }}
             >
-                ABOUT ME
+                about me
             </AnimatedHeader>
             <AboutSection>
                 <ImgWrapper

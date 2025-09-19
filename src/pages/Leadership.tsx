@@ -40,8 +40,8 @@ const Leadership= () => {
     const containerRef = useRef(null);
 
     return (
-        <BlueAppContainer ref={containerRef}>
-            <Section heading="LEADERSHIP">
+        <BlueAppContainer ref={containerRef} id="leadership">
+            <Section heading="leadership">
                 <div>
                     {leadershipData.map((experience, index) => (
                         <motion.div
