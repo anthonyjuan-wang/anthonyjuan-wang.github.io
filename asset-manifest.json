@@ -1,22 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.09890afb.css",
-    "main.js": "/static/js/main.c5b39b17.js",
+    "main.js": "/static/js/main.ea830e10.js",
     "static/js/453.ee5807c3.chunk.js": "/static/js/453.ee5807c3.chunk.js",
     "static/media/aboutimage.jpeg": "/static/media/aboutimage.466f4bc9d4086aeabb15.jpeg",
     "static/media/csclogo.png": "/static/media/csclogo.467569253996b14e75dd.png",
     "static/media/csalogo.png": "/static/media/csalogo.659c40866d04a34212b1.png",
+    "static/media/standardbiotools.png": "/static/media/standardbiotools.c9fd69e73e571eac3080.png",
     "index.html": "/index.html",
     "static/media/github.svg": "/static/media/github.6fa18895f6e6c7772cab7049f7e05f59.svg",
     "static/media/instagram-svgrepo-com.svg": "/static/media/instagram-svgrepo-com.0892873a0cf149f667290cf30f10f363.svg",
     "static/media/envelope.svg": "/static/media/envelope.5db19284c153fe8f0a7f5d64000b5cda.svg",
     "static/media/linkedin.svg": "/static/media/linkedin.e9b8df20d092b20af087c400014ff4c8.svg",
     "main.09890afb.css.map": "/static/css/main.09890afb.css.map",
-    "main.c5b39b17.js.map": "/static/js/main.c5b39b17.js.map",
+    "main.ea830e10.js.map": "/static/js/main.ea830e10.js.map",
     "453.ee5807c3.chunk.js.map": "/static/js/453.ee5807c3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09890afb.css",
-    "static/js/main.c5b39b17.js"
+    "static/js/main.ea830e10.js"
   ]
 }
