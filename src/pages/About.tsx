@@ -15,10 +15,22 @@ const AboutItem = styled(motion.p)`
   border-radius: 20px;
   box-shadow: 0 5px 15px var(--shadow-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px var(--shadow-medium);
+  }
+
+  @media ${device.tablet} {
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+
+  @media ${device.mobileM} {
+    font-size: 18px;
+    padding: 12px 15px;
   }
 `;
 
@@ -54,8 +66,15 @@ const AboutSection = styled(motion.div)`
     align-items: center;
     justify-content: center;
     gap: 20px;
-    @media screen and ${device.mobileM} {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    @media ${device.tablet} {
         flex-direction: column;
+        gap: 30px;
     }
 `;
 
@@ -78,9 +97,11 @@ const AboutText = styled(motion.div)`
     display: flex;
     flex-direction: column;
     width: 50%;
-    max-width: 100%;
-    @media  screen and ${device.mobileM} {
-        width: 90%;
+    max-width: 600px;
+
+    @media ${device.tablet} {
+        width: 100%;
+        max-width: 500px;
     }
 `;
 
@@ -90,6 +111,15 @@ const ImgWrapper = styled(motion.div)`
     align-items: center;
     justify-content: center;
     height: 35rem;
+    max-width: 100%;
+
+    @media ${device.tablet} {
+        height: 25rem;
+    }
+
+    @media ${device.mobileM} {
+        height: 20rem;
+    }
 `;
 
 const AnimatedHeader = styled(motion(Header))`

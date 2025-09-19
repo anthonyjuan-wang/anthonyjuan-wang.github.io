@@ -21,12 +21,30 @@ const FooterContainer = styled(motion.div)`
         rgba(122, 184, 122, 0.8) 100%);
     backdrop-filter: blur(5px);
     box-shadow: 0 -2px 10px var(--shadow-soft);
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    @media (max-width: 768px) {
+        padding: 50px 15px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 40px 10px;
+    }
 `;
 
 const FooterList = styled(motion.div)`
-    display:flex;
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 20px;
+    gap: 10px;
+    max-width: 100%;
+
+    @media (max-width: 600px) {
+        gap: 5px;
+    }
 `;
 
 const FooterHeader = styled(motion(Header))`
@@ -36,17 +54,31 @@ const FooterHeader = styled(motion(Header))`
 `;
 const FooterIcon = styled(motion.img)`
     width: 4.5rem;
-    margin: 0 1.5rem;
+    margin: 0 1rem;
     padding: 1rem;
     background: var(--white-soft);
     border-radius: 1.5rem;
     box-shadow: 0 5px 15px var(--shadow-soft);
     transition: all 0.3s ease;
+    box-sizing: border-box;
 
     &:hover {
         transform: scale(1.1) translateY(-5px);
         box-shadow: 0 10px 25px var(--shadow-medium);
         background: linear-gradient(135deg, var(--white-soft) 0%, var(--matcha-light) 100%);
+    }
+
+    @media (max-width: 768px) {
+        width: 3.5rem;
+        margin: 0 0.8rem;
+        padding: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+        width: 3rem;
+        margin: 0 0.5rem;
+        padding: 0.6rem;
+        border-radius: 1rem;
     }
 `;
 

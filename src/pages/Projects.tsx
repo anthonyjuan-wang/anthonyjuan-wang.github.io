@@ -25,7 +25,20 @@ const ComingSoonText = styled(motion.div)`
     background: var(--white-soft);
     box-shadow: 0 10px 30px var(--shadow-soft);
     max-width: 600px;
+    width: 90%;
     margin: 0 auto;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        padding: 30px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 18px;
+        padding: 20px;
+        width: 95%;
+    }
 `;
 
 const Projects = () => {

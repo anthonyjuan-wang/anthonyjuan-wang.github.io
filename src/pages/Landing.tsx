@@ -33,10 +33,18 @@ const LandingHeader = styled(motion.h1)`
     z-index: 10;
     pointer-events: none;
     box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     @media (max-width: 800px) {
-        font-size: 28px;
+        font-size: 36px;
         top: 50px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 28px;
+        top: 40px;
+        padding: 0 15px;
     }
 `;
 
@@ -54,14 +62,22 @@ const SubHeader = styled(motion.div)`
     pointer-events: none;
     box-sizing: border-box;
     color: var(--matcha-medium);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     span {
         color: var(--matcha-dark);
     }
 
     @media (max-width: 800px) {
-        font-size: 20px;
-        top: 120px;
+        font-size: 24px;
+        top: 140px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 18px;
+        top: 110px;
+        padding: 0 15px;
     }
 `;
 

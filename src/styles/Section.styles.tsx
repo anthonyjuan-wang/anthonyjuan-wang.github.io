@@ -13,6 +13,18 @@ const SectionHeading = styled(motion.h1)`
     font-weight: bold;
     color: var(--matcha-dark);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
 `;
 
 const SectionContainer = styled.div`
@@ -22,6 +34,8 @@ const SectionContainer = styled.div`
     max-width: 100%;
     flex-direction: column;
     padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 `;
 
 export const Section = ({ heading, children }: SectionProps) => {

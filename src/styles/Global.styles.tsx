@@ -10,12 +10,24 @@ export const AppContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
+    box-sizing: border-box;
 `;
 
 export const Header = styled.h1`
     font-size: 60px;
     font-weight: bold;
     line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: 768px) {
+        font-size: 45px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 35px;
+    }
 `;
 
 export const SubHeader = styled.h2`

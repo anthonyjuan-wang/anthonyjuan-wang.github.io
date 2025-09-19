@@ -28,6 +28,8 @@ export const TimelineWrapper = styled.div`
     max-width: 900px;
     margin: 0 auto;
     padding-left: 60px;
+    padding-right: 20px;
+    box-sizing: border-box;
 
     &:before {
         content: '';
@@ -40,10 +42,21 @@ export const TimelineWrapper = styled.div`
     }
 
     @media (max-width: 768px) {
-        padding-left: 40px;
+        padding-left: 50px;
+        padding-right: 15px;
+        max-width: 100%;
 
         &:before {
-            left: 19px;
+            left: 25px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding-left: 45px;
+        padding-right: 10px;
+
+        &:before {
+            left: 20px;
         }
     }
 `;
@@ -84,15 +97,22 @@ export const TimelineLogo = styled.div<{ bgColor: string }>`
     }
 
     @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        left: -50px;
+    }
+
+    @media (max-width: 600px) {
         width: 40px;
         height: 40px;
-        left: -40px;
+        left: -45px;
     }
 `;
 
 export const ExpContainer = styled.div<{ bgColor: string}>`
     padding: 1.5rem;
     margin-left: 30px;
+    margin-right: 0;
     background: var(--white-soft);
     display: flex;
     flex-direction: column;
@@ -105,6 +125,7 @@ export const ExpContainer = styled.div<{ bgColor: string}>`
     overflow: hidden;
     flex: 1;
     max-width: 800px;
+    box-sizing: border-box;
 
     &:before {
         content: '';
@@ -123,8 +144,15 @@ export const ExpContainer = styled.div<{ bgColor: string}>`
     }
 
     @media (max-width: 768px) {
+        margin-left: 20px;
+        padding: 1.2rem;
+        border-radius: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
         margin-left: 15px;
         padding: 1rem;
+        border-radius: 1rem;
     }
 `;
 
@@ -172,6 +200,16 @@ export const RoleHeader = styled.h2`
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--matcha-dark);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 1.3rem;
+    }
 `;
 
 export const RoleDate = styled.p`
@@ -179,6 +217,16 @@ export const RoleDate = styled.p`
     font-size: 1.2rem;
     color: var(--matcha-medium);
     font-weight: 500;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: 768px) {
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 1rem;
+    }
 `;
 
 export const CompanyHeader = styled.h1`
@@ -187,6 +235,16 @@ export const CompanyHeader = styled.h1`
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--matcha-dark);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: 768px) {
+        font-size: 1.8rem;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 1.5rem;
+    }
 `;  
 
 export const ExpHeader = styled.h1`
@@ -200,10 +258,21 @@ export const ExpHeader = styled.h1`
 export const DetailList = styled.ul`
     margin-top: 0.25rem;
     margin-bottom: 0;
+    padding-left: 1.5rem;
     font-weight: normal;
     font-size: 1.25rem;
     line-height: 1.5;
     color: #333333;
+
+    @media (max-width: 768px) {
+        font-size: 1.15rem;
+        padding-left: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
 `; 
 
 export const Detail = styled.li`

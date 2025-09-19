@@ -22,6 +22,7 @@ const NavBarContainer = styled(motion.div)`
     background: linear-gradient(135deg, var(--white-soft) 0%, var(--matcha-light) 100%);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px var(--shadow-soft);
+    flex-wrap: wrap;
 
     @media screen and ${device.mobileM} {
         flex-direction: column;
@@ -35,18 +36,22 @@ const NavMobileMenu = styled.div<NavBarProps>`
     margin: 0;
     padding: 0;
     list-style-type: none;
-    width: 100%; 
+    width: 100%;
     text-align: center;
     flex-direction: column;
+    overflow: hidden;
+    max-height: ${props => (props.isNavOpen ? "500px" : "0")};
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    padding: ${props => (props.isNavOpen ? "1rem 0" : "0")};
 
     @media screen and (min-width: ${size.sm}){
         display: none;
     }
-    height: ${props => (props.isNavOpen ? "35dvh" : 0)};
-    transition: all 0.5s ease-in-out;
+
     li {
         transition: all 0.4s ease-in-out;
         opacity: ${props => (props.isNavOpen ? "1" : "0")};
+        visibility: ${props => (props.isNavOpen ? "visible" : "hidden")};
         padding: 1rem;
         list-style: none;
         font-size: 1.25rem;
