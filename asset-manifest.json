@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.bbc35a63.css",
-    "main.js": "/static/js/main.f679876e.js",
-    "static/js/592.74932e6f.chunk.js": "/static/js/592.74932e6f.chunk.js",
+    "main.css": "/static/css/main.09890afb.css",
+    "main.js": "/static/js/main.bc412fc4.js",
+    "static/js/453.ee5807c3.chunk.js": "/static/js/453.ee5807c3.chunk.js",
     "static/media/aboutimage.jpeg": "/static/media/aboutimage.466f4bc9d4086aeabb15.jpeg",
     "static/media/csclogo.png": "/static/media/csclogo.467569253996b14e75dd.png",
     "static/media/csalogo.png": "/static/media/csalogo.659c40866d04a34212b1.png",
     "index.html": "/index.html",
     "static/media/github.svg": "/static/media/github.6fa18895f6e6c7772cab7049f7e05f59.svg",
+    "static/media/instagram-svgrepo-com.svg": "/static/media/instagram-svgrepo-com.0892873a0cf149f667290cf30f10f363.svg",
     "static/media/envelope.svg": "/static/media/envelope.5db19284c153fe8f0a7f5d64000b5cda.svg",
     "static/media/linkedin.svg": "/static/media/linkedin.e9b8df20d092b20af087c400014ff4c8.svg",
-    "static/media/halfcircle.svg": "/static/media/halfcircle.dc95965dc3e0f4685ddd2f90a93384fc.svg",
-    "main.bbc35a63.css.map": "/static/css/main.bbc35a63.css.map",
-    "main.f679876e.js.map": "/static/js/main.f679876e.js.map",
-    "592.74932e6f.chunk.js.map": "/static/js/592.74932e6f.chunk.js.map"
+    "main.09890afb.css.map": "/static/css/main.09890afb.css.map",
+    "main.bc412fc4.js.map": "/static/js/main.bc412fc4.js.map",
+    "453.ee5807c3.chunk.js.map": "/static/js/453.ee5807c3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbc35a63.css",
-    "static/js/main.f679876e.js"
+    "static/css/main.09890afb.css",
+    "static/js/main.bc412fc4.js"
   ]
 }
