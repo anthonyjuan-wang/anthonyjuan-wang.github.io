@@ -25,6 +25,8 @@ export const BlueAppContainer = styled(BaseGlassContainer)`
 // Timeline container wrapper
 export const TimelineWrapper = styled.div`
     position: relative;
+    max-width: 900px;
+    margin: 0 auto;
     padding-left: 60px;
 
     &:before {
@@ -51,6 +53,7 @@ export const TimelineItem = styled.div`
     align-items: flex-start;
     margin-bottom: 3rem;
     position: relative;
+    width: 100%;
 `;
 
 export const TimelineLogo = styled.div<{ bgColor: string }>`
@@ -100,7 +103,8 @@ export const ExpContainer = styled.div<{ bgColor: string}>`
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
     overflow: hidden;
-    width: 100%;
+    flex: 1;
+    max-width: 800px;
 
     &:before {
         content: '';

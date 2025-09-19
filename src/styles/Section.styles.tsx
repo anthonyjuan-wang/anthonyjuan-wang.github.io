@@ -17,7 +17,7 @@ const SectionHeading = styled(motion.h1)`
 
 const SectionContainer = styled.div`
     display: flex;
-    width: 50rem;
+    width: 100%;
     margin: 0 auto;
     max-width: 100%;
     flex-direction: column;
