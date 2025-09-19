@@ -2,7 +2,7 @@ import { Section } from '../styles/Section.styles';
 import { WhiteAppContainer, ExpContainer, Link, DetailList, Detail, TimelineWrapper, TimelineItem, TimelineLogo, RoleContainer, RoleHeader, RoleDate, CompanyHeader } from '../styles/Experience.styles';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import { fadeInUp } from '../hooks/useScrollAnimation';
+import { scaleIn } from '../hooks/useScrollAnimation';
 import ShopifyLogo from '../assets/shopify.png';
 import StandardBioLogo from '../assets/standardbiotools.png';
 import BlueRoverLogo from '../assets/bluerover.png';
@@ -25,7 +25,7 @@ const Experience = () => {
                         "Championed automation of contextual bandit parameter tuning, cutting manual analysis hours by 70–90% and reducing time-to-decision from 3 days to same day, by building an end-to-end Vertex AI pipeline with Docker, Sidekiq, and Ruby",
                         "Integrated Off Policy Evaluation to find the best parameters for a pricing page multi-armed bandit using Python and Vowpal Wabbit, increasing user reward score by 15% compared to uniformly random"
                     ],
-                },  
+                },      
             ]
         },
         {
@@ -132,9 +132,9 @@ const Experience = () => {
                                     once: false,
                                     amount: 0.3
                                 }}
-                                variants={fadeInUp}
+                                variants={scaleIn}
                                 transition={{
-                                    duration: 0.6,
+                                    duration: 0.5,
                                     delay: index * 0.15,
                                     ease: "easeOut"
                                 }}
