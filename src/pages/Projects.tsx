@@ -42,12 +42,13 @@ interface Project {
 const projectsData: Project[] = [
     {
         title: "Personal Portfolio",
-        description: "Modern, responsive portfolio website showcasing my projects and experience. Built with React, TypeScript, and styled-components, featuring smooth animations and a unique matcha-themed design aesthetic.",
+        description: "Modern, responsive portfolio website showcasing my projects and experience. Built with React, TypeScript, and styled-components, featuring smooth animations and a personal design aesthetic.",
         tech: ["React", "TypeScript", "styled-components", "Framer Motion", "GitHub Pages"],
         github: "https://github.com/anthonyjuan-wang/anthonyjuan-wang.github.io",
         demo: "https://anthonyjwang.me",
         featured: true
     },
+    
     // Add more projects here as needed
 ];
 

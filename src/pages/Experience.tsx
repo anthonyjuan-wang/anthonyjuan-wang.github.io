@@ -18,7 +18,7 @@ const Experience = () => {
             roles: [
                 {
                     position: 'Software Engineer Intern',
-                    date: 'May 2025 - August 2025',
+                    date: 'Summer 2025',
                     tech: 'TypeScript, Python, Vowpal Wabbit, Ruby, Rails, BigQuery',
                     details: [
                         "Accelerated feature flag adoption for 10+ teams by architecting on-call support workflows and debugging complex configuration issues, and achieving 99.5% uptime using TypeScript, Ruby, Redis, and GraphQL APIs",
@@ -71,8 +71,6 @@ const Experience = () => {
                     details: [
                         "Refactored the existing UI to UI 2.0 by recreating over " +
                         "12+ PHP components in React, modernizing the outdated user interface",
-                        "Ensured production stability by writing 20+ unit tests for 10+ components " +
-                        "with Jest & React Testing Library, enabling the safe production launch of UI 2.0",
                     ],
                 }
             ]

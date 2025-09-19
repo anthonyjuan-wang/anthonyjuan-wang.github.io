@@ -3,21 +3,22 @@ import styled from "styled-components";
 // Grid container for projects
 export const ProjectGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
     box-sizing: border-box;
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        padding: 0 15px;
+        padding: 0 20px;
     }
 
     @media (max-width: 600px) {
-        padding: 0 10px;
+        padding: 0 15px;
+        gap: 1.2rem;
     }
 `;
 
@@ -33,15 +34,10 @@ export const ProjectCard = styled.div<{ featured?: boolean; isOnlyProject?: bool
     flex-direction: column;
     position: relative;
     height: 100%;
+    min-height: 450px;
 
     ${props => props.featured && !props.isOnlyProject && `
         grid-column: 1 / -1;
-
-        @media (min-width: 769px) {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            align-items: center;
-        }
     `}
 
     &:before {
@@ -50,7 +46,7 @@ export const ProjectCard = styled.div<{ featured?: boolean; isOnlyProject?: bool
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
+        height: 3px;
         background: linear-gradient(90deg, var(--matcha-primary) 0%, var(--matcha-accent) 100%);
     }
 
@@ -63,30 +59,32 @@ export const ProjectCard = styled.div<{ featured?: boolean; isOnlyProject?: bool
 
 // Project content container
 export const ProjectContent = styled.div`
-    padding: 2rem;
+    padding: 2.5rem;
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 
     @media (max-width: 768px) {
-        padding: 1.5rem;
+        padding: 2rem;
     }
 
     @media (max-width: 600px) {
-        padding: 1.2rem;
+        padding: 1.5rem;
     }
 `;
 
 // Project image/screenshot
 export const ProjectImage = styled.div`
     width: 100%;
-    height: 250px;
+    height: 220px;
     background: linear-gradient(135deg, var(--matcha-light) 0%, var(--matcha-accent) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
+    flex-shrink: 0;
 
     img {
         width: 100%;
@@ -105,39 +103,49 @@ export const ProjectImage = styled.div`
         font-size: 3rem;
         opacity: 0.5;
     }
+
+    @media (max-width: 768px) {
+        height: 200px;
+    }
+
+    @media (max-width: 600px) {
+        height: 180px;
+    }
 `;
 
 // Project title
 export const ProjectTitle = styled.h3`
-    margin: 0 0 0.8rem 0;
-    font-size: 1.8rem;
+    margin: 0;
+    font-size: 1.7rem;
     font-weight: 600;
     color: var(--matcha-dark);
-    line-height: 1.2;
+    line-height: 1.3;
 
     @media (max-width: 768px) {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     @media (max-width: 600px) {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
     }
 `;
 
 // Project description
 export const ProjectDescription = styled.p`
-    margin: 0 0 1.5rem 0;
-    font-size: 1.15rem;
-    line-height: 1.6;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
     color: #333333;
     flex-grow: 1;
 
     @media (max-width: 768px) {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.7;
     }
 
     @media (max-width: 600px) {
-        font-size: 1rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
     }
 `;
 
@@ -146,7 +154,7 @@ export const TechStack = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin: 0.5rem 0;
 `;
 
 // Individual tech badge

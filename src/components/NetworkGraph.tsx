@@ -74,14 +74,14 @@ const NetworkGraph: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
       fg.d3Force('link')?.distance(100);  // Set link distance
       fg.d3Force('collide')?.strength(1).radius(60);
 
-      // Set initial zoom based on screen size
+      // Set initial zoom and center based on screen size
       setTimeout(() => {
         if (fg.zoom) {
           const isMobile = window.innerWidth <= 768;
           const isSmallMobile = window.innerWidth <= 600;
 
-          // Different zoom levels for different screen sizes
-          const zoomLevel = isSmallMobile ? 1.2 : isMobile ? 1.5 : 2.0;
+          // Different zoom levels for different screen sizes - slightly adjusted since users can't zoom
+          const zoomLevel = isSmallMobile ? 1.4 : isMobile ? 1.7 : 2.2;
 
           fg.zoom(zoomLevel);  // Responsive zoom
           fg.centerAt(0, 0, 400);  // Center the graph
@@ -282,8 +282,8 @@ const NetworkGraph: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
         onNodeHover={(node: NodeData | null) => setHoveredNode(node ? node.id : null)}
         onZoomEnd={handleZoomChange}
         enableNodeDrag={true}
-        enablePanInteraction={true}
-        enableZoomInteraction={true}
+        enablePanInteraction={false}
+        enableZoomInteraction={false}
         minZoom={0.5}
         maxZoom={5}
         backgroundColor="transparent"
