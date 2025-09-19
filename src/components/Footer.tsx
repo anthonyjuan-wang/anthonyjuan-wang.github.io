@@ -3,28 +3,45 @@ import GitHub from "../assets/github.svg";
 import Mail from "../assets/envelope.svg";
 import LinkedIn from "../assets/linkedin.svg";
 import { Header } from "../styles/Global.styles";
+import { motion } from 'framer-motion';
 
-const FooterContainer = styled.div`
-    display: flex; 
+const FooterContainer = styled(motion.div)`
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: relative;
     width: 100%;
     margin: 0 auto;
-    background: var(--cherry-blossom-pink);
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--matcha-medium) 0%, var(--matcha-dark) 100%);
+    box-shadow: 0 -5px 20px var(--shadow-soft);
 `;
 
-const FooterList = styled.div`
+const FooterList = styled(motion.div)`
     display:flex;
     flex-direction: row;
+    margin-top: 20px;
 `;
-const FooterIcon = styled.img`
-    width: 5rem;
-    margin-right: 2rem;
+
+const FooterHeader = styled(motion(Header))`
+    color: var(--white-soft);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+`;
+const FooterIcon = styled(motion.img)`
+    width: 4.5rem;
+    margin: 0 1.5rem;
+    padding: 1rem;
+    background: var(--white-soft);
+    border-radius: 1.5rem;
+    box-shadow: 0 5px 15px var(--shadow-soft);
+    transition: all 0.3s ease;
+
     &:hover {
-        transform: scale(1.2);
-        fill: black;
+        transform: scale(1.1) translateY(-5px);
+        box-shadow: 0 10px 25px var(--shadow-medium);
+        background: linear-gradient(135deg, var(--white-soft) 0%, var(--matcha-light) 100%);
     }
 `;
 
@@ -44,13 +61,50 @@ const Footer = () => {
         },
     ];
     return (
-        <FooterContainer id = "contact">
-            <Header>CONTACT</Header>
-            <FooterList>
-                {FooterData.map((item) => (
-                    <a href={item.link} target="_blank" rel="noopener noreferrer" title="Visit Link">
-                        <FooterIcon src={item.icon} alt="icon"></FooterIcon>
-                    </a>
+        <FooterContainer
+            id="contact"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+        >
+            <FooterHeader
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+                CONTACT
+            </FooterHeader>
+            <FooterList
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ staggerChildren: 0.1 }}
+            >
+                {FooterData.map((item, index) => (
+                    <motion.a
+                        key={index}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Visit Link"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: false }}
+                        transition={{
+                            duration: 0.4,
+                            delay: index * 0.1,
+                            ease: "easeOut"
+                        }}
+                    >
+                        <FooterIcon
+                            src={item.icon}
+                            alt="icon"
+                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileTap={{ scale: 0.95 }}
+                        />
+                    </motion.a>
                 ))}
             </FooterList>
         </FooterContainer>
