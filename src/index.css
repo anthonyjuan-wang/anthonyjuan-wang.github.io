@@ -8,6 +8,16 @@
   --tea-green: #C7EFCF;
   --sky-blue: #aeebff;
   --beige: 	#fff0db;
+
+  /* New Matcha Color Palette */
+  --matcha-light: #D4E8D4;
+  --matcha-primary: #B8D8B8;
+  --matcha-medium: #A8D5A8;
+  --matcha-accent: #8FC68F;
+  --matcha-dark: #7AB87A;
+  --white-soft: #FAFFFE;
+  --shadow-soft: rgba(168, 213, 168, 0.2);
+  --shadow-medium: rgba(143, 198, 143, 0.3);
 }
 
 body {

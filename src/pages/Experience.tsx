@@ -1,5 +1,8 @@
 import { Section } from '../styles/Section.styles';
 import { WhiteAppContainer, ExpContainer, ExpHeader, Link, ExpDate, DetailList, Detail } from '../styles/Experience.styles';
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { fadeInUp } from '../hooks/useScrollAnimation';
 
 const Experience = () => {
     const experienceData = [
@@ -13,7 +16,7 @@ const Experience = () => {
                         "Developed program simulating Suspension and Imaging mode on StandardBioTools medical instruments, using Signal Generators, .NET & C#, enhancing software testing workflow & productivity by over 200%"
                     ],
             link: 'https://www.standardbio.com/',
-            color: '--tea-green',
+            color: '--matcha-accent',
         },
         {
             company: 'blueRover',
@@ -30,7 +33,7 @@ const Experience = () => {
                         "allowing for more efficient data parsing & contributing to a 13% overall improvement in system responsiveness"
                     ],
             link:  'https://www.bluerover.ai/',
-            color: '--mint-cream',
+            color: '--matcha-primary',
         },
         {
             company: 'FirstHX',
@@ -46,25 +49,46 @@ const Experience = () => {
                         "to the server, resulting in accelerated data processing and improved overall application responsivenes"
                     ],
             link:  'https://firsthx.com/',
-            color: '--sky-blue',
+            color: '--matcha-medium',
         },
         // Add more work experience data as needed
     ];
     
+    const containerRef = useRef(null);
+
     return (
-        <WhiteAppContainer id="experience">
+        <WhiteAppContainer id="experience" ref={containerRef}>
             <Section heading="EXPERIENCE">
-                {experienceData.map((experience) => (
-                    <ExpContainer bgColor={experience.color}>
-                        <ExpHeader>
-                            {experience.position} @ <Link href = {experience.link} target="_blank" rel="noopener noreferrer" > {experience.company} </Link>
-                        </ExpHeader>
-                        <ExpDate> {experience.date} - {experience.tech}</ExpDate>
-                        <DetailList>{experience.details.map((detail) => (
-                            <Detail>{detail}</Detail> 
-                        ))}</DetailList>
-                    </ExpContainer>
-                ))}
+                <div>
+                    {experienceData.map((experience, index) => (
+                        <motion.div
+                            key={index}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{
+                                once: false,
+                                amount: 0.3,
+                                margin: "0px 0px -100px 0px"
+                            }}
+                            variants={fadeInUp}
+                            transition={{
+                                duration: 0.6,
+                                delay: index * 0.15,
+                                ease: "easeOut"
+                            }}
+                        >
+                            <ExpContainer bgColor={experience.color}>
+                                <ExpHeader>
+                                    {experience.position} @ <Link href={experience.link} target="_blank" rel="noopener noreferrer"> {experience.company} </Link>
+                                </ExpHeader>
+                                <ExpDate> {experience.date} - {experience.tech}</ExpDate>
+                                <DetailList>{experience.details.map((detail, detailIndex) => (
+                                    <Detail key={detailIndex}>{detail}</Detail>
+                                ))}</DetailList>
+                            </ExpContainer>
+                        </motion.div>
+                    ))}
+                </div>
             </Section>
         </WhiteAppContainer>
     );

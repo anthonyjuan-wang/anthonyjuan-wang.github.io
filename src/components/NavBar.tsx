@@ -4,21 +4,24 @@ import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { device, size } from "../styles/breakpoints";
+import { motion } from 'framer-motion';
 interface NavBarProps {
     isNavOpen: Boolean;
 }
 
-const NavBarContainer = styled.div`
+const NavBarContainer = styled(motion.div)`
     display: flex;
     position: sticky;
     z-index: 1;
     align-items: center;
     justify-content: space-between;
-    border-radius: 10px;
+    border-radius: 20px;
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--cherry-blossom-pink);
+    background: linear-gradient(135deg, var(--white-soft) 0%, var(--matcha-light) 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px var(--shadow-soft);
 
     @media screen and ${device.mobileM} {
         flex-direction: column;
@@ -73,37 +76,48 @@ const NavMenu = styled.div`
         font-size: 1.25rem;
         font-weight: bold;
         text-decoration: none;
+        transition: all 0.3s ease;
         &:hover {
-            transform: scale(1.10);
+            transform: scale(1.10) translateY(-2px);
             text-decoration: underline;
             text-underline-offset: 1rem;
             text-decoration-thickness: 2px;
+            text-decoration-color: var(--matcha-accent);
         }
     }
 `;
 
-const NavLogo = styled.div`
+const NavLogo = styled(motion.div)`
     transition: all 0.5s ease-out;
     margin: 1rem;
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 0.25rem;
+    background: linear-gradient(135deg, var(--matcha-dark) 0%, var(--matcha-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 `;
 
 
 const NavMenuItem = styled.li`
 `;
 
-const NavMenuLink = styled.a`
+const NavMenuLink = styled(motion.a)`
     text-decoration: none;
+    color: var(--matcha-dark);
+    transition: all 0.3s ease;
     &:active{
-        color: var(--cherry-blossom-pink);
+        color: var(--matcha-accent);
     }
     &:visited{
-        color: black;
+        color: var(--matcha-dark);
     }
     &:link{
-        color: black;
+        color: var(--matcha-dark);
+    }
+    &:hover {
+        color: var(--matcha-accent);
     }
 `;
 
@@ -134,20 +148,69 @@ const NavBar = () => {
     }
 
     return (
-        <NavBarContainer>
-            <NavLogo>anthony</NavLogo>
+        <NavBarContainer
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+            <NavLogo
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+            >
+                anthony
+            </NavLogo>
             <NavMenu>
-                <NavMenuItem><NavMenuLink href="#about"> about </NavMenuLink></NavMenuItem>
-                <NavMenuItem><NavMenuLink href="#experience"> experience </NavMenuLink></NavMenuItem>
-                <NavMenuItem><NavMenuLink href="#projects"> projects </NavMenuLink></NavMenuItem>
-                <NavMenuItem><NavMenuLink href="#contact"> contact </NavMenuLink></NavMenuItem>
+                <NavMenuItem>
+                    <NavMenuLink
+                        href="#about"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        about
+                    </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
+                    <NavMenuLink
+                        href="#experience"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        experience
+                    </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
+                    <NavMenuLink
+                        href="#projects"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        projects
+                    </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
+                    <NavMenuLink
+                        href="#contact"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        contact
+                    </NavMenuLink>
+                </NavMenuItem>
             </NavMenu>
-                <NavMobileMenu isNavOpen={isNavOpen}>
-                    <NavMenuItem><NavMenuLink href="#about"> about </NavMenuLink></NavMenuItem>
-                    <NavMenuItem><NavMenuLink href="#experience"> experience </NavMenuLink></NavMenuItem>
-                    <NavMenuItem><NavMenuLink href="#projects"> projects </NavMenuLink></NavMenuItem>
-                    <NavMenuItem><NavMenuLink href="#contact"> contact </NavMenuLink></NavMenuItem>
-                </NavMobileMenu>
+            <NavMobileMenu isNavOpen={isNavOpen}>
+                <NavMenuItem>
+                    <NavMenuLink href="#about"> about </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
+                    <NavMenuLink href="#experience"> experience </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
+                    <NavMenuLink href="#projects"> projects </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
+                    <NavMenuLink href="#contact"> contact </NavMenuLink>
+                </NavMenuItem>
+            </NavMobileMenu>
             <NavButton isNavOpen={isNavOpen} onClick={handleNavClick}>
                 {isNavOpen? <FontAwesomeIcon icon={faX} size="2x" />
                     : <FontAwesomeIcon icon={faBars} size="2x" /> }
