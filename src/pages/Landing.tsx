@@ -18,7 +18,7 @@ const LandingContainer = styled.div`
 
 const LandingHeader = styled(motion.h1)`
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: 0;
     right: 0;
     font-size: 56px;
@@ -36,7 +36,7 @@ const LandingHeader = styled(motion.h1)`
 
     @media (max-width: 800px) {
         font-size: 28px;
-        top: 60px;
+        top: 50px;
     }
 `;
 
@@ -113,13 +113,13 @@ const Landing: React.FC = () => {
                         sequence={[
                             'a software developer',
                             2000,
-                            'a stats major',
+                            'a student (still)',
                             2000,
-                            'a gamer',
+                            'feeling sleepy...',
                             2000,
                             'a problem solver',
                             2000,
-                            'an innovator',
+                            'trying to beat the unemployment allegations',
                             2000,
                         ]}
                         wrapper="span"

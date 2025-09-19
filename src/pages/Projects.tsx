@@ -7,9 +7,14 @@ import styled from 'styled-components';
 
 
 const ProjectsContainer = styled(AppContainer)`
-    background: linear-gradient(135deg, var(--matcha-primary) 0%, var(--matcha-light) 100%);
+    margin: -2px auto 0 auto;
+    background: linear-gradient(180deg,
+        rgba(184, 216, 184, 0.3) 0%,
+        rgba(184, 216, 184, 0.4) 100%);
+    backdrop-filter: blur(5px);
     padding: 80px 20px;
     min-height: 400px;
+    position: relative;
 `;
 
 const ComingSoonText = styled(motion.div)`
@@ -36,7 +41,7 @@ const About = () => {
                     animate={controls}
                     variants={fadeInUp}
                 >
-                    Exciting projects coming soon! 🚀
+                    coming soon 🚀
                 </ComingSoonText>
             </Section>
         </ProjectsContainer>

@@ -9,18 +9,91 @@ export const TextContainer = styled.div`
 
 export const WhiteAppContainer = styled(AppContainer)`
     margin: 0 auto;
-    background: linear-gradient(135deg, var(--matcha-primary) 0%, var(--matcha-light) 100%);
+    background: linear-gradient(180deg,
+        rgba(184, 216, 184, 0.3) 0%,
+        rgba(200, 224, 200, 0.25) 100%);
+    backdrop-filter: blur(5px);
     padding: 80px 20px;
+    position: relative;
 `;
 export const BlueAppContainer = styled(AppContainer)`
-    margin: 0 auto;
-    background: linear-gradient(135deg, var(--matcha-light) 0%, var(--matcha-primary) 100%);
+    margin: -2px auto 0 auto;
+    background: linear-gradient(180deg,
+        rgba(200, 224, 200, 0.25) 0%,
+        rgba(184, 216, 184, 0.3) 100%);
+    backdrop-filter: blur(5px);
     padding: 80px 20px;
+    position: relative;
+`;
+
+// Timeline container wrapper
+export const TimelineWrapper = styled.div`
+    position: relative;
+    padding-left: 60px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 39px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, var(--matcha-light) 0%, var(--matcha-accent) 50%, var(--matcha-light) 100%);
+    }
+
+    @media (max-width: 768px) {
+        padding-left: 40px;
+
+        &:before {
+            left: 19px;
+        }
+    }
+`;
+
+export const TimelineItem = styled.div`
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    position: relative;
+`;
+
+export const TimelineLogo = styled.div<{ bgColor: string }>`
+    position: absolute;
+    left: -60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--white-soft);
+    border: 3px solid var(${props => props.bgColor});
+    box-shadow: 0 5px 15px rgba(122, 184, 122, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    &:hover {
+        transform: scale(1.15);
+        box-shadow: 0 8px 20px rgba(122, 184, 122, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
+        left: -40px;
+    }
 `;
 
 export const ExpContainer = styled.div<{ bgColor: string}>`
-    padding: 2rem;
-    margin-bottom: 2rem;
+    padding: 1.5rem;
+    margin-left: 30px;
     background: var(--white-soft);
     display: flex;
     flex-direction: column;
@@ -31,6 +104,7 @@ export const ExpContainer = styled.div<{ bgColor: string}>`
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
     overflow: hidden;
+    width: 100%;
 
     &:before {
         content: '';
@@ -43,19 +117,19 @@ export const ExpContainer = styled.div<{ bgColor: string}>`
     }
 
     &:hover {
-        transform: translateY(-5px);
+        transform: translateX(5px);
         box-shadow: 0 15px 40px rgba(122, 184, 122, 0.25);
         border-color: var(--matcha-accent);
+    }
+
+    @media (max-width: 768px) {
+        margin-left: 15px;
+        padding: 1rem;
     }
 `;
 
 export const LeadershipContainer = styled(ExpContainer)`
-    padding: 2rem;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 2rem;
+    // Inherits all styles from ExpContainer
 `;
 
 export const ExpLogo = styled.img`
@@ -77,6 +151,42 @@ export const ExpDate = styled.h3`
     font-size: 1.4rem;
     color: var(--matcha-medium);
     opacity: 1;
+`;
+
+export const RoleContainer = styled.div`
+    margin-bottom: 1rem;
+
+    &:not(:last-child) {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--matcha-light);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+`;
+
+export const RoleHeader = styled.h2`
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--matcha-dark);
+`;
+
+export const RoleDate = styled.p`
+    margin: 0.3rem 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--matcha-medium);
+    font-weight: 500;
+`;
+
+export const CompanyHeader = styled.h1`
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--matcha-dark);
 `;  
 
 export const ExpHeader = styled.h1`
@@ -88,7 +198,8 @@ export const ExpHeader = styled.h1`
 `;
 
 export const DetailList = styled.ul`
-    margin-bottom: 2rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
     font-weight: normal;
     font-size: 1.25rem;
     line-height: 1.5;

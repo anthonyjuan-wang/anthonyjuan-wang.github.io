@@ -13,10 +13,14 @@ const FooterContainer = styled(motion.div)`
     justify-content: center;
     position: relative;
     width: 100%;
-    margin: 0 auto;
+    margin: -2px auto 0 auto;
     padding: 60px 20px;
-    background: linear-gradient(135deg, var(--matcha-medium) 0%, var(--matcha-dark) 100%);
-    box-shadow: 0 -5px 20px var(--shadow-soft);
+    background: linear-gradient(180deg,
+        rgba(184, 216, 184, 0.4) 0%,
+        rgba(168, 213, 168, 0.6) 50%,
+        rgba(122, 184, 122, 0.8) 100%);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 -2px 10px var(--shadow-soft);
 `;
 
 const FooterList = styled(motion.div)`

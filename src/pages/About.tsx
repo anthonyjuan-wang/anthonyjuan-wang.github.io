@@ -24,8 +24,28 @@ const AboutItem = styled(motion.p)`
 
 const AboutContainer = styled(AppContainer)`
     align-items: center;
-    background: linear-gradient(135deg, var(--matcha-light) 0%, var(--matcha-primary) 100%);
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(250, 255, 254, 0.7) 15%,
+        rgba(212, 232, 212, 0.5) 50%,
+        rgba(184, 216, 184, 0.5) 100%);
+    backdrop-filter: blur(5px);
     padding: 80px 20px;
+    padding-top: 120px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 150px;
+        background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            transparent 100%);
+        pointer-events: none;
+    }
 `;
 
 const AboutSection = styled(motion.div)`
@@ -80,10 +100,9 @@ const AnimatedHeader = styled(motion(Header))`
 
 const About = () => {
     const aboutContent = [
-        "I'm a Statistics major at the University of Waterloo, with a minor in Computer Science. Currently, I'm employed at Standard BioTools, where I'm working on automating data workflow processes and simulating manual testing methods.",
-        "I'm passionate about using data to drive decision-making and solve complex problems.",
-        "In my spare time I like to go the gym, watch anime, and cook (message me your best recipes)!",
-        "Feel free to contact me at the links below. I'm always open to new opportunities and connections.",
+        "Hi! I'm Anthony, a student in my final year at the University of Waterloo, majoring in Stat with a minor in CS.",
+        "I'm currently completing my final internship at Shopify, working on improving A-B testing methods and platforms.",
+        "In my life outside code, I love to EAT, play video games, watch anime, and am currently (learning) to cook!",,
     ];
 
     return (

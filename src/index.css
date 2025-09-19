@@ -27,11 +27,18 @@ body {
   height: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  font-family: 'Source Sans 3', 
+  font-family: 'Source Sans 3',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  background: linear-gradient(180deg,
+    var(--white-soft) 0%,
+    var(--matcha-light) 25%,
+    var(--matcha-primary) 50%,
+    var(--matcha-light) 75%,
+    var(--white-soft) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 code {

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { device, size } from "../styles/breakpoints";
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 interface NavBarProps {
     isNavOpen: Boolean;
 }
@@ -12,16 +13,15 @@ interface NavBarProps {
 const NavBarContainer = styled(motion.div)`
     display: flex;
     position: sticky;
-    z-index: 1;
+    z-index: 100;
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px;
     top: 0;
     left: 0;
     width: 100%;
     background: linear-gradient(135deg, var(--white-soft) 0%, var(--matcha-light) 100%);
     backdrop-filter: blur(10px);
-    box-shadow: 0 5px 20px var(--shadow-soft);
+    box-shadow: 0 2px 10px var(--shadow-soft);
 
     @media screen and ${device.mobileM} {
         flex-direction: column;
@@ -111,19 +111,28 @@ const NavLogo = styled(motion.a)`
 const NavMenuItem = styled.li`
 `;
 
-const NavMenuLink = styled(motion.a)`
+const NavMenuLink = styled(motion.a)<{ $isActive?: boolean }>`
     text-decoration: none;
-    color: var(--matcha-dark);
+    color: ${props => props.$isActive ? 'var(--matcha-accent)' : 'var(--matcha-dark)'};
     transition: all 0.3s ease;
     &:active{
         color: var(--matcha-accent);
     }
     &:visited{
-        color: var(--matcha-dark);
+        color: ${props => props.$isActive ? 'var(--matcha-accent)' : 'var(--matcha-dark)'};
     }
     &:link{
-        color: var(--matcha-dark);
+        color: ${props => props.$isActive ? 'var(--matcha-accent)' : 'var(--matcha-dark)'};
     }
+    &:hover {
+        color: var(--matcha-accent);
+    }
+`;
+
+const NavRouterLink = styled(motion(Link))<{ $isActive?: boolean }>`
+    text-decoration: none;
+    color: ${props => props.$isActive ? 'var(--matcha-accent)' : 'var(--matcha-dark)'};
+    transition: all 0.3s ease;
     &:hover {
         color: var(--matcha-accent);
     }
@@ -151,6 +160,10 @@ const NavButton = styled.button<NavBarProps>`
 const NavBar = () => {
 
     const [isNavOpen, setNavOpen] = useState(false);
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+    const isBlogPage = location.pathname.startsWith('/blog');
+
     const handleNavClick = () => {
         setNavOpen(!isNavOpen);
     }
@@ -162,7 +175,9 @@ const NavBar = () => {
             transition={{ duration: 0.5, ease: "easeOut" }}
         >
             <NavLogo
-                href="#landing"
+                as={isHomePage ? motion.a : Link}
+                href={isHomePage ? "#landing" : "/"}
+                to={!isHomePage ? "/" : undefined}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
             >
@@ -171,7 +186,7 @@ const NavBar = () => {
             <NavMenu>
                 <NavMenuItem>
                     <NavMenuLink
-                        href="#landing"
+                        href={isHomePage ? "#landing" : "/#landing"}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -180,7 +195,7 @@ const NavBar = () => {
                 </NavMenuItem>
                 <NavMenuItem>
                     <NavMenuLink
-                        href="#about"
+                        href={isHomePage ? "#about" : "/#about"}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -189,7 +204,7 @@ const NavBar = () => {
                 </NavMenuItem>
                 <NavMenuItem>
                     <NavMenuLink
-                        href="#experience"
+                        href={isHomePage ? "#experience" : "/#experience"}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -198,7 +213,7 @@ const NavBar = () => {
                 </NavMenuItem>
                 <NavMenuItem>
                     <NavMenuLink
-                        href="#leadership"
+                        href={isHomePage ? "#leadership" : "/#leadership"}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -207,7 +222,7 @@ const NavBar = () => {
                 </NavMenuItem>
                 <NavMenuItem>
                     <NavMenuLink
-                        href="#projects"
+                        href={isHomePage ? "#projects" : "/#projects"}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -216,32 +231,45 @@ const NavBar = () => {
                 </NavMenuItem>
                 <NavMenuItem>
                     <NavMenuLink
-                        href="#contact"
+                        href={isHomePage ? "#contact" : "/#contact"}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
                         contact
                     </NavMenuLink>
                 </NavMenuItem>
+                <NavMenuItem>
+                    <NavRouterLink
+                        to="/blog"
+                        $isActive={isBlogPage}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        blog
+                    </NavRouterLink>
+                </NavMenuItem>
             </NavMenu>
             <NavMobileMenu isNavOpen={isNavOpen}>
                 <NavMenuItem>
-                    <NavMenuLink href="#landing"> home </NavMenuLink>
+                    <NavMenuLink href={isHomePage ? "#landing" : "/#landing"}> home </NavMenuLink>
                 </NavMenuItem>
                 <NavMenuItem>
-                    <NavMenuLink href="#about"> about </NavMenuLink>
+                    <NavMenuLink href={isHomePage ? "#about" : "/#about"}> about </NavMenuLink>
                 </NavMenuItem>
                 <NavMenuItem>
-                    <NavMenuLink href="#experience"> experience </NavMenuLink>
+                    <NavMenuLink href={isHomePage ? "#experience" : "/#experience"}> experience </NavMenuLink>
                 </NavMenuItem>
                 <NavMenuItem>
-                    <NavMenuLink href="#leadership"> leadership </NavMenuLink>
+                    <NavMenuLink href={isHomePage ? "#leadership" : "/#leadership"}> leadership </NavMenuLink>
                 </NavMenuItem>
                 <NavMenuItem>
-                    <NavMenuLink href="#projects"> projects </NavMenuLink>
+                    <NavMenuLink href={isHomePage ? "#projects" : "/#projects"}> projects </NavMenuLink>
                 </NavMenuItem>
                 <NavMenuItem>
-                    <NavMenuLink href="#contact"> contact </NavMenuLink>
+                    <NavMenuLink href={isHomePage ? "#contact" : "/#contact"}> contact </NavMenuLink>
+                </NavMenuItem>
+                <NavMenuItem>
+                    <NavRouterLink to="/blog" $isActive={isBlogPage}> blog </NavRouterLink>
                 </NavMenuItem>
             </NavMobileMenu>
             <NavButton isNavOpen={isNavOpen} onClick={handleNavClick}>

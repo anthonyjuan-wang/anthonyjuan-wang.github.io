@@ -47,9 +47,10 @@ const NetworkGraph: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
   const [draggedNode, setDraggedNode] = useState<string | null>(null);
   const animationFrameRef = useRef<number>();
   const nodeAnimationsRef = useRef<Map<string, { currentSize: number; targetSize: number; currentLabelY: number; targetLabelY: number }>>(new Map());
+  const [hasInitialized, setHasInitialized] = useState(false);
   const [graphData] = useState<GraphData>({
     nodes: [
-      { id: 'home', label: 'home' },  // Central node
+      { id: 'home', label: 'drag me around!' },  // Central node
       { id: 'about', label: 'about' },
       { id: 'experience', label: 'experience' },
       { id: 'leadership', label: 'leadership' },
@@ -74,6 +75,14 @@ const NetworkGraph: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
       fg.d3Force('charge')?.strength(-800);  // Stronger repulsion for better spacing
       fg.d3Force('link')?.distance(100);  // Set link distance
       fg.d3Force('collide')?.strength(1).radius(60);
+
+      // Set initial zoom to show labels clearly
+      setTimeout(() => {
+        if (fg.zoom) {
+          fg.zoom(2.0);  // Start at 200% zoom - labels are visible
+          fg.centerAt(0, 0, 400);  // Center the graph
+        }
+      }, 100);
     }
   }, []);
 

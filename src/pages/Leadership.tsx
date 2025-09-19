@@ -1,5 +1,5 @@
 import { Section } from '../styles/Section.styles';
-import { ExpHeader,  DetailList, Detail, ExpDate, ExpLogo, TextContainer, LeadershipContainer, BlueAppContainer } from '../styles/Experience.styles'
+import { DetailList, Detail, LeadershipContainer, BlueAppContainer, TimelineWrapper, TimelineItem, TimelineLogo, RoleContainer, RoleHeader, RoleDate, CompanyHeader, Link } from '../styles/Experience.styles'
 import CSA from '../assets/csalogo.png';
 import CSC from  '../assets/csclogo.png';
 import COK from '../assets/coklogo.png';
@@ -12,27 +12,54 @@ const Leadership= () => {
     const leadershipData = [
         {
             company: 'UW Computer Science Club',
-            position: 'Lead Event Coordinator',
-            date: 'Winter 2022 - Present',
-            details: ['Leading a team of event coordinators to run fun and educational events for the CS comunity at Waterloo'],
+            logo: CSC,
+            link: 'https://csclub.uwaterloo.ca/',
             color: "--matcha-accent",
-            logo: CSC
+            roles: [
+                {
+                    position: 'Lead Event Coordinator',
+                    date: 'Winter 2022 - Summer 2024',
+                    tech: '',
+                    details: ['Lead team of 15 + event coordinators to run fun and educational events for the CS community at Waterloo!']
+                }
+            ]
         },
         {
             company: 'UW Chinese Students Association',
-            position: 'VP Internal',
-            date: 'Summer 2022 - Present',
-            details: ['Overseeing creating a dynamic and inclusive community for Chinese students at UW'],
+            logo: CSA,
+            link: 'https://www.instagram.com/uwcsa/',
             color: "--matcha-primary",
-            logo: CSA
+            roles: [
+                {
+                    position: 'Co-President',
+                    date: 'Winter 2024',
+                    tech: '',
+                    details: [
+                        'Managed a group of 60+ executives to run the largest social events at the University of Waterloo',
+                        'Reached over 5000+ followers on our Instagram pages'
+                    ]
+                },
+                {
+                    position: 'VP Internal',
+                    date: 'Summer 2022 - Summer 2024',
+                    tech: '',
+                    details: ['Overseeing creating a dynamic and inclusive community for Chinese students at UW']
+                },
+            ]
         },
         {
             company: 'City of Kitchener',
-            position: 'Swim Instructor & Lifeguard',
-            date: '2016 - 2022',
-            details: ['Instructing children and adults of all ages in swimming and water safety!'],
+            logo: COK,
+            link: 'https://www.kitchener.ca/',
             color: "--matcha-medium",
-            logo: COK
+            roles: [
+                {
+                    position: 'Swim Instructor & Lifeguard',
+                    date: '2016 - 2022',
+                    tech: '',
+                    details: ['Instructing children and adults of all ages in swimming and water safety!']
+                }
+            ]
         },
         // Add more work experience data as needed
     ];
@@ -42,48 +69,66 @@ const Leadership= () => {
     return (
         <BlueAppContainer ref={containerRef} id="leadership">
             <Section heading="leadership">
-                <div>
+                <TimelineWrapper>
                     {leadershipData.map((experience, index) => (
-                        <motion.div
-                            key={index}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{
-                                once: false,
-                                amount: 0.3,
-                                margin: "0px 0px -100px 0px"
-                            }}
-                            variants={scaleIn}
-                            transition={{
-                                duration: 0.5,
-                                delay: index * 0.15,
-                                ease: "easeOut"
-                            }}
-                        >
-                            <LeadershipContainer bgColor={experience.color}>
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: false, amount: 0.5 }}
-                                    transition={{
-                                        duration: 0.4,
-                                        delay: index * 0.15 + 0.1,
-                                        ease: "easeOut"
-                                    }}
-                                >
-                                    <ExpLogo src={experience.logo} alt="logo"></ExpLogo>
-                                </motion.div>
-                                <TextContainer>
-                                    <ExpHeader>{experience.company}, {experience.position} </ExpHeader>
-                                    <ExpDate> {experience.date}</ExpDate>
-                                    <DetailList>{experience.details.map((detail, detailIndex) => (
-                                        <Detail key={detailIndex}>{detail}</Detail>
-                                    ))}</DetailList>
-                                </TextContainer>
-                            </LeadershipContainer>
-                        </motion.div>
+                        <TimelineItem key={index}>
+                            <TimelineLogo
+                                bgColor={experience.color}
+                                as={motion.div}
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: false, amount: 0.5 }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.1,
+                                    ease: "easeOut",
+                                    type: "spring",
+                                    stiffness: 260,
+                                    damping: 20
+                                }}
+                            >
+                                <img src={experience.logo} alt="logo" />
+                            </TimelineLogo>
+
+                            <motion.div
+                                style={{ width: '100%' }}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{
+                                    once: false,
+                                    amount: 0.3
+                                }}
+                                variants={scaleIn}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.15,
+                                    ease: "easeOut"
+                                }}
+                            >
+                                <LeadershipContainer bgColor={experience.color}>
+                                    <CompanyHeader>
+                                        {experience.link !== '#' ? (
+                                            <Link href={experience.link} target="_blank" rel="noopener noreferrer">{experience.company}</Link>
+                                        ) : (
+                                            experience.company
+                                        )}
+                                    </CompanyHeader>
+                                    {experience.roles.map((role, roleIndex) => (
+                                        <RoleContainer key={roleIndex}>
+                                            <RoleHeader>{role.position}</RoleHeader>
+                                            <RoleDate>{role.date}{role.tech && ` • ${role.tech}`}</RoleDate>
+                                            <DetailList>
+                                                {role.details.map((detail: string, detailIndex: number) => (
+                                                    <Detail key={detailIndex}>{detail}</Detail>
+                                                ))}
+                                            </DetailList>
+                                        </RoleContainer>
+                                    ))}
+                                </LeadershipContainer>
+                            </motion.div>
+                        </TimelineItem>
                     ))}
-                </div>
+                </TimelineWrapper>
             </Section>
         </BlueAppContainer>
     );
