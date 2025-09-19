@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Landing from "./pages/Landing";
 import Footer from "./components/Footer";
 import Leadership from "./pages/Leadership";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Leadership/>
       <Projects/>
       <Footer/>
+      <ScrollToTop/>
     </>
     /*<BrowserRouter basename="/personal-website">
       <Routes> 
