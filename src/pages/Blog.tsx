@@ -98,22 +98,6 @@ const Blog: React.FC = () => {
         excerpt: 'An introduction to my personal blog where I share thoughts on software engineering, technology trends, and personal growth.',
         readTime: '3 min read',
         tags: ['Introduction', 'Personal']
-      },
-      {
-        slug: 'lessons-from-shopify',
-        title: 'Lessons Learned at Shopify: Building Scalable Systems',
-        date: '2024-01-10',
-        excerpt: 'Key insights from my internship at Shopify, working on feature flags and contextual bandits for improved user experiences.',
-        readTime: '8 min read',
-        tags: ['Shopify', 'Engineering', 'Machine Learning']
-      },
-      {
-        slug: 'react-performance-tips',
-        title: 'React Performance Optimization Tips',
-        date: '2024-01-05',
-        excerpt: 'Practical tips and techniques I\'ve learned for optimizing React applications for better performance.',
-        readTime: '5 min read',
-        tags: ['React', 'JavaScript', 'Performance']
       }
     ];
 
