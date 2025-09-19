@@ -1,71 +1,79 @@
-import styled, { keyframes } from 'styled-components';
-import yinyang from '../assets/halfcircle.svg';
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
+import NetworkGraph from '../components/NetworkGraph';
 
 const LandingContainer = styled.div`
-    display: flex;
-    height: 100dvh;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-`;
-
-const spinAnimation = keyframes`
-    0% { 
-        transform: rotate(360deg);
-    }
-    100% { 
-        transform: rotate(0deg); 
-    }  
-`;
-
-const Spin = styled.div`
-    animation: ${spinAnimation} 2s linear 0s infinite reverse;
-    animation-play-state: paused;
-    &:hover {
-        animation-play-state: running;
-    }
-`;
-
-const CenterLogo = styled.img`
     position: relative;
-    width: 300px;
-    height: 300px;
-    animation: ${spinAnimation} 4s linear 0s infinite normal;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    overflow: hidden;
 `;
 
-const fadeIn = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`;
-
-const LandingHeader = styled.h1`   
-    animation: ${fadeIn} 5s;
-    font-size: 80px;
-    font-weight: 1000;
+const LandingHeader = styled(motion.h1)`
+    position: absolute;
+    font-size: 72px;
+    font-weight: 900;
     text-align: center;
-    margin: 40px 0;
-    line-height: 1.5;
     max-width: 960px;
+    padding: 0 20px;
+    background: linear-gradient(135deg, var(--matcha-dark) 0%, var(--matcha-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    z-index: 10;
+
     @media (max-width: 800px) {
-        font-size: 40px;
+        font-size: 36px;
     }
 `;
 
-const Landing = () => {   
+const Landing: React.FC = () => {
+    const [showText, setShowText] = useState(true);
+    const [showGraph, setShowGraph] = useState(false);
+
+    useEffect(() => {
+        // Show text for 3 seconds, then fade out and show graph
+        const textTimer = setTimeout(() => {
+            setShowText(false);
+        }, 3000);
+
+        const graphTimer = setTimeout(() => {
+            setShowGraph(true);
+        }, 3500);
+
+        return () => {
+            clearTimeout(textTimer);
+            clearTimeout(graphTimer);
+        };
+    }, []);
+
     return (
-        <div id = "blossom-container">
-        <LandingContainer>
-            <LandingHeader>Hey there, I'm Anthony. Nice to meet you!</LandingHeader>
-            <Spin> 
-                <CenterLogo src = {yinyang} alt=""/>
-            </Spin>
+        <LandingContainer id="landing">
+            <AnimatePresence>
+                {showText && (
+                    <LandingHeader
+                        initial={{ opacity: 0, y: -30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 30 }}
+                        transition={{
+                            duration: 0.8,
+                            ease: "easeOut"
+                        }}
+                    >
+                        Hey there, I'm Anthony. Nice to meet you!
+                    </LandingHeader>
+                )}
+            </AnimatePresence>
+
+            <NetworkGraph isVisible={showGraph} />
         </LandingContainer>
-        </div>
-    )
+    );
 };
 
 export default Landing;
