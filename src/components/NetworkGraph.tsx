@@ -74,10 +74,16 @@ const NetworkGraph: React.FC<{ isVisible: boolean }> = ({ isVisible }) => {
       fg.d3Force('link')?.distance(100);  // Set link distance
       fg.d3Force('collide')?.strength(1).radius(60);
 
-      // Set initial zoom to show labels clearly
+      // Set initial zoom based on screen size
       setTimeout(() => {
         if (fg.zoom) {
-          fg.zoom(2.0);  // Start at 200% zoom - labels are visible
+          const isMobile = window.innerWidth <= 768;
+          const isSmallMobile = window.innerWidth <= 600;
+
+          // Different zoom levels for different screen sizes
+          const zoomLevel = isSmallMobile ? 1.2 : isMobile ? 1.5 : 2.0;
+
+          fg.zoom(zoomLevel);  // Responsive zoom
           fg.centerAt(0, 0, 400);  // Center the graph
         }
       }, 100);
