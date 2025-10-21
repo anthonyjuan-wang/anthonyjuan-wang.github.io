@@ -1,0 +1,201 @@
+/* Simple plaintext resume styles */
+.simple-resume {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.7;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.header {
+  margin-bottom: 60px;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 25px 0;
+  color: #2d5a2d;
+  letter-spacing: -0.5px;
+}
+
+.header nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header nav a {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.header nav a:hover {
+  color: #2d5a2d;
+  background-color: rgba(45, 90, 45, 0.1);
+}
+
+.content {
+  max-width: 100%;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  color: #2d5a2d;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #2d5a2d;
+  padding-bottom: 8px;
+}
+
+.section > p {
+  font-size: 16px;
+  color: #5a6c5a;
+  margin: 0 0 35px 0;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.experience-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border-left: 4px solid #2d5a2d;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.experience-item p {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.experience-item a {
+  color: #2d5a2d;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.experience-item a:hover {
+  color: #1e3a1e;
+  border-bottom-color: #2d5a2d;
+}
+
+.details {
+  font-size: 13px !important;
+  color: #6c757d !important;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 5px !important;
+  font-weight: 500 !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .simple-resume {
+    padding: 40px 20px;
+    margin: 0 10px;
+  }
+  
+  .header h1 {
+    font-size: 28px;
+  }
+  
+  .header nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .header nav a {
+    text-align: center;
+    padding: 12px 20px;
+  }
+  
+  .experience-item {
+    padding: 16px;
+  }
+}
+
+/* Social Footer Styles */
+.social-footer {
+  margin-top: 60px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(45, 90, 45, 0.2);
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(45, 90, 45, 0.3);
+  background: rgba(45, 90, 45, 0.1);
+}
+
+.social-link img {
+  width: 24px;
+  height: 24px;
+  filter: opacity(0.7);
+  transition: filter 0.3s ease;
+}
+
+.social-link:hover img {
+  filter: opacity(1);
+}
+
+/* Responsive social footer */
+@media (max-width: 768px) {
+  .social-footer {
+    margin-top: 40px;
+    padding: 30px 0;
+  }
+  
+  .social-links {
+    gap: 20px;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .social-link img {
+    width: 20px;
+    height: 20px;
+  }
+}
